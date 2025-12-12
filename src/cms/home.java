@@ -59,9 +59,8 @@ public class home extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 153));
         jLabel7.setText("UNIVERSITY");
 
-        about.setBackground(new java.awt.Color(255, 0, 255));
+        about.setBackground(new java.awt.Color(204, 204, 204));
         about.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        about.setForeground(new java.awt.Color(255, 255, 255));
         about.setText("ABOUT");
         about.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -71,9 +70,8 @@ public class home extends javax.swing.JFrame {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/logo1.jpg"))); // NOI18N
 
-        home.setBackground(new java.awt.Color(255, 0, 255));
+        home.setBackground(new java.awt.Color(204, 204, 204));
         home.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        home.setForeground(new java.awt.Color(255, 255, 255));
         home.setText("HOME");
         home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,9 +79,8 @@ public class home extends javax.swing.JFrame {
             }
         });
 
-        profile.setBackground(new java.awt.Color(0, 102, 255));
+        profile.setBackground(new java.awt.Color(204, 204, 204));
         profile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("A");
         profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
