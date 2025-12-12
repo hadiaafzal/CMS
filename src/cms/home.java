@@ -204,7 +204,7 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(sassign, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 230, 59));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\OneDrive\\Documents\\loginpagepic.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Downloads\\darkcms.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
 
         pack();
