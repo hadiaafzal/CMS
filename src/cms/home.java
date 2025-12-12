@@ -48,7 +48,8 @@ public class home extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(102, 102, 102));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -131,9 +132,9 @@ public class home extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 120));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        cpassword.setBackground(new java.awt.Color(0, 204, 204));
+        cpassword.setBackground(new java.awt.Color(204, 204, 204));
         cpassword.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         cpassword.setText("Change Password");
         cpassword.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +144,7 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 233, 59));
 
-        schedule.setBackground(new java.awt.Color(0, 204, 204));
+        schedule.setBackground(new java.awt.Color(204, 204, 204));
         schedule.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         schedule.setText("Class Schedule");
         schedule.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +154,7 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(schedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 230, 59));
 
-        addclass.setBackground(new java.awt.Color(0, 204, 204));
+        addclass.setBackground(new java.awt.Color(204, 204, 204));
         addclass.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         addclass.setText("ADD Classes");
         addclass.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +164,7 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(addclass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 230, 59));
 
-        announcement.setBackground(new java.awt.Color(0, 204, 204));
+        announcement.setBackground(new java.awt.Color(204, 204, 204));
         announcement.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         announcement.setText("Announcement");
         announcement.addActionListener(new java.awt.event.ActionListener() {
@@ -182,9 +183,9 @@ public class home extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 460, 129, 59));
+        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
 
-        fvoucher.setBackground(new java.awt.Color(0, 204, 204));
+        fvoucher.setBackground(new java.awt.Color(204, 204, 204));
         fvoucher.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         fvoucher.setText("Fee Voucher");
         fvoucher.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +195,7 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(fvoucher, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 233, 60));
 
-        sassign.setBackground(new java.awt.Color(0, 204, 204));
+        sassign.setBackground(new java.awt.Color(204, 204, 204));
         sassign.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         sassign.setText("Show Assignment");
         sassign.addActionListener(new java.awt.event.ActionListener() {
