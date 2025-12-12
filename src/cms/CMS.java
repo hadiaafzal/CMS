@@ -16,6 +16,7 @@ public class CMS {
 Statement st;
 ResultSet rs;
 
+
 CMS(){
 
     
@@ -71,6 +72,7 @@ public ResultSet teacherDetails(String id, String pass){
 
     String sql="select*from teachers where t_id='"+id+"' AND t_pass='"+pass+"'";
     try{
+
     rs=st.executeQuery(sql);
     }catch(Exception e){
     System.out.print(e);
@@ -85,6 +87,8 @@ public ResultSet teacherDetails(String id, String pass){
     public static void main(String[] args) {
         // TODO code application logic here
        CMS db=new CMS();
+       login lg=new login();
+       lg.setVisible(true);
     }
     
 }
