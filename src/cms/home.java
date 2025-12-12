@@ -47,7 +47,6 @@ public class home extends javax.swing.JFrame {
         fvoucher = new javax.swing.JButton();
         cpassword = new javax.swing.JButton();
         announcement = new javax.swing.JButton();
-        tetet = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -176,15 +175,6 @@ public class home extends javax.swing.JFrame {
             }
         });
 
-        tetet.setBackground(new java.awt.Color(0, 204, 204));
-        tetet.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        tetet.setText("tedftfd");
-        tetet.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tetetActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -205,9 +195,8 @@ public class home extends javax.swing.JFrame {
                         .addGap(68, 68, 68)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(fvoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tetet, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(fvoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(245, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -239,9 +228,7 @@ public class home extends javax.swing.JFrame {
                             .addComponent(sassign, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(27, 27, 27)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tetet, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(27, 27, 27)
                         .addComponent(announcement, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))
@@ -375,11 +362,6 @@ public class home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_announcementActionPerformed
 
-    private void tetetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tetetActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_tetetActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -425,6 +407,5 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton profile;
     private javax.swing.JButton sassign;
     private javax.swing.JButton schedule;
-    private javax.swing.JButton tetet;
     // End of variables declaration//GEN-END:variables
 }
