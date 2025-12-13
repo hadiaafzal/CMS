@@ -357,7 +357,7 @@ public class home extends javax.swing.JFrame {
                 sassignActionPerformed(evt);
             }
         });
-        getContentPane().add(sassign1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 230, 59));
+        getContentPane().add(sassign1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 230, 59));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
