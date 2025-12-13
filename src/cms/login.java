@@ -287,7 +287,7 @@ public class login extends javax.swing.JFrame {
         if(trs.next()){
         //match selection
         
-        thome th=new thome();
+        Teahome th=new Teahome();
         th.setVisible(true);
         dispose();
         return;

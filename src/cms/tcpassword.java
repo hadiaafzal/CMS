@@ -307,21 +307,21 @@ public class tcpassword extends javax.swing.JFrame {
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed

@@ -35,13 +35,25 @@ public class home extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         home = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        cpassword = new javax.swing.JButton();
-        schedule = new javax.swing.JButton();
-        addclass = new javax.swing.JButton();
-        announcement = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         login = new javax.swing.JButton();
-        fvoucher = new javax.swing.JButton();
+        addclass = new javax.swing.JButton();
         sassign = new javax.swing.JButton();
+        schedule = new javax.swing.JButton();
+        fvoucher = new javax.swing.JButton();
+        cpassword = new javax.swing.JButton();
+        announcement = new javax.swing.JButton();
+        cpassword1 = new javax.swing.JButton();
+        schedule1 = new javax.swing.JButton();
+        addclass1 = new javax.swing.JButton();
+        announcement1 = new javax.swing.JButton();
+        login1 = new javax.swing.JButton();
+        fvoucher1 = new javax.swing.JButton();
+        sassign1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -88,6 +100,151 @@ public class home extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Name:");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Anas Khatri");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Student ID:");
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("CSC-25S-004");
+
+        login.setBackground(new java.awt.Color(255, 0, 51));
+        login.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        login.setForeground(new java.awt.Color(255, 255, 255));
+        login.setText("LOGOUT");
+        login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loginActionPerformed(evt);
+            }
+        });
+
+        addclass.setBackground(new java.awt.Color(0, 204, 204));
+        addclass.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        addclass.setText("ADD Classes");
+        addclass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addclassActionPerformed(evt);
+            }
+        });
+
+        sassign.setBackground(new java.awt.Color(0, 204, 204));
+        sassign.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        sassign.setText("Show Assignment");
+        sassign.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sassignActionPerformed(evt);
+            }
+        });
+
+        schedule.setBackground(new java.awt.Color(0, 204, 204));
+        schedule.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        schedule.setText("Class Schedule");
+        schedule.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scheduleActionPerformed(evt);
+            }
+        });
+
+        fvoucher.setBackground(new java.awt.Color(0, 204, 204));
+        fvoucher.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        fvoucher.setText("Fee Voucher");
+        fvoucher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fvoucherActionPerformed(evt);
+            }
+        });
+
+        cpassword.setBackground(new java.awt.Color(0, 204, 204));
+        cpassword.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        cpassword.setText("Change Password");
+        cpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cpasswordActionPerformed(evt);
+            }
+        });
+
+        announcement.setBackground(new java.awt.Color(0, 204, 204));
+        announcement.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        announcement.setText("Announcement");
+        announcement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                announcementActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(announcement, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sassign, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addclass, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fvoucher, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(addclass, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fvoucher, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sassign, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cpassword, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(27, 27, 27)
+                        .addComponent(schedule, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(announcement, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(login, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))))
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -131,76 +288,76 @@ public class home extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        cpassword.setBackground(new java.awt.Color(204, 204, 204));
-        cpassword.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        cpassword.setText("Change Password");
-        cpassword.addActionListener(new java.awt.event.ActionListener() {
+        cpassword1.setBackground(new java.awt.Color(204, 204, 204));
+        cpassword1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        cpassword1.setText("Change Password");
+        cpassword1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cpasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(cpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 233, 59));
+        getContentPane().add(cpassword1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 233, 59));
 
-        schedule.setBackground(new java.awt.Color(204, 204, 204));
-        schedule.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        schedule.setText("Class Schedule");
-        schedule.addActionListener(new java.awt.event.ActionListener() {
+        schedule1.setBackground(new java.awt.Color(204, 204, 204));
+        schedule1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        schedule1.setText("Class Schedule");
+        schedule1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 scheduleActionPerformed(evt);
             }
         });
-        getContentPane().add(schedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 230, 59));
+        getContentPane().add(schedule1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 230, 59));
 
-        addclass.setBackground(new java.awt.Color(204, 204, 204));
-        addclass.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        addclass.setText("ADD Classes");
-        addclass.addActionListener(new java.awt.event.ActionListener() {
+        addclass1.setBackground(new java.awt.Color(204, 204, 204));
+        addclass1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        addclass1.setText("Add Classes");
+        addclass1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addclassActionPerformed(evt);
             }
         });
-        getContentPane().add(addclass, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 230, 59));
+        getContentPane().add(addclass1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 230, 59));
 
-        announcement.setBackground(new java.awt.Color(204, 204, 204));
-        announcement.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        announcement.setText("Announcement");
-        announcement.addActionListener(new java.awt.event.ActionListener() {
+        announcement1.setBackground(new java.awt.Color(204, 204, 204));
+        announcement1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        announcement1.setText("Announcement");
+        announcement1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 announcementActionPerformed(evt);
             }
         });
-        getContentPane().add(announcement, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 230, 59));
+        getContentPane().add(announcement1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 230, 59));
 
-        login.setBackground(new java.awt.Color(255, 0, 51));
-        login.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("LOGOUT");
-        login.addActionListener(new java.awt.event.ActionListener() {
+        login1.setBackground(new java.awt.Color(255, 0, 51));
+        login1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        login1.setForeground(new java.awt.Color(255, 255, 255));
+        login1.setText("LOGOUT");
+        login1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loginActionPerformed(evt);
             }
         });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
+        getContentPane().add(login1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
 
-        fvoucher.setBackground(new java.awt.Color(204, 204, 204));
-        fvoucher.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        fvoucher.setText("Fee Voucher");
-        fvoucher.addActionListener(new java.awt.event.ActionListener() {
+        fvoucher1.setBackground(new java.awt.Color(204, 204, 204));
+        fvoucher1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        fvoucher1.setText("Fee Voucher");
+        fvoucher1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fvoucherActionPerformed(evt);
             }
         });
-        getContentPane().add(fvoucher, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 233, 60));
+        getContentPane().add(fvoucher1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 233, 60));
 
-        sassign.setBackground(new java.awt.Color(204, 204, 204));
-        sassign.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        sassign.setText("Show Assignment");
-        sassign.addActionListener(new java.awt.event.ActionListener() {
+        sassign1.setBackground(new java.awt.Color(204, 204, 204));
+        sassign1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        sassign1.setText("Show Assignment");
+        sassign1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sassignActionPerformed(evt);
             }
         });
-        getContentPane().add(sassign, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 230, 59));
+        getContentPane().add(sassign1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 230, 59));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
@@ -303,18 +460,30 @@ public class home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
     private javax.swing.JButton addclass;
+    private javax.swing.JButton addclass1;
     private javax.swing.JButton announcement;
+    private javax.swing.JButton announcement1;
     private javax.swing.JButton cpassword;
+    private javax.swing.JButton cpassword1;
     private javax.swing.JButton fvoucher;
+    private javax.swing.JButton fvoucher1;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton login;
+    private javax.swing.JButton login1;
     private javax.swing.JButton profile;
     private javax.swing.JButton sassign;
+    private javax.swing.JButton sassign1;
     private javax.swing.JButton schedule;
+    private javax.swing.JButton schedule1;
     // End of variables declaration//GEN-END:variables
 }

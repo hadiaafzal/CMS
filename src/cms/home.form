@@ -194,7 +194,7 @@
                                   <Component id="cpassword" min="-2" pref="233" max="-2" attributes="0"/>
                                   <Component id="fvoucher" min="-2" pref="233" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace pref="245" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -228,7 +228,7 @@
                                   <Component id="addclass" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                                   <Component id="fvoucher" alignment="3" pref="60" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="0" pref="30" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="sassign" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                                   <Component id="cpassword" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
@@ -397,10 +397,9 @@
             </Component>
           </SubComponents>
         </Container>
- c1ae09e626c6f20f890cb2796a3f352b6f9209e8
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="cpassword">
+    <Component class="javax.swing.JButton" name="cpassword1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -419,7 +418,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="schedule">
+    <Component class="javax.swing.JButton" name="schedule1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -438,7 +437,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="addclass">
+    <Component class="javax.swing.JButton" name="addclass1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -446,7 +445,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="24" style="3"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="ADD Classes"/>
+        <Property name="text" type="java.lang.String" value="Add Classes"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addclassActionPerformed"/>
@@ -457,7 +456,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="announcement">
+    <Component class="javax.swing.JButton" name="announcement1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -476,7 +475,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="login">
+    <Component class="javax.swing.JButton" name="login1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="0" red="ff" type="rgb"/>
@@ -498,7 +497,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="fvoucher">
+    <Component class="javax.swing.JButton" name="fvoucher1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -517,7 +516,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JButton" name="sassign">
+    <Component class="javax.swing.JButton" name="sassign1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="cc" green="cc" red="cc" type="rgb"/>

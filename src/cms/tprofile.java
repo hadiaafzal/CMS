@@ -286,21 +286,21 @@ public class tprofile extends javax.swing.JFrame {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        thome h=new thome();
+        Teahome h=new Teahome();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_saveActionPerformed
