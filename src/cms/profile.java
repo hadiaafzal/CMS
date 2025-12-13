@@ -288,7 +288,7 @@ public class profile extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("First Name:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 77, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 100, -1));
 
         jTextField7.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
