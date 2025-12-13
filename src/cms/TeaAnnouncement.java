@@ -159,7 +159,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 510, 270));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Supreme_Traders\\OneDrive\\Documents\\NetBeansProjects\\CMS\\src\\logo\\blurimg.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 840, 580));
 
         pack();

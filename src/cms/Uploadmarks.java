@@ -200,8 +200,6 @@ public class Uploadmarks extends javax.swing.JFrame {
         jScrollPane1.setViewportView(attendance);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(122, 230, 640, 290));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Supreme_Traders\\OneDrive\\Documents\\NetBeansProjects\\CMS\\src\\logo\\blurimg.jpg")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 480));
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 102));
@@ -360,20 +358,6 @@ tprofile p=new tprofile();
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
-        // TODO add your handling code here:
-                Teahome h=new Teahome();
-        h.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_cancelActionPerformed
-
-    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
-        // TODO add your handling code here:
-                Teahome h=new Teahome();
-        h.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_confirmActionPerformed
-
     private void cancel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel1ActionPerformed
         // TODO add your handling code here:
         
@@ -385,6 +369,20 @@ tprofile p=new tprofile();
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirm1ActionPerformed
+
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+        // TODO add your handling code here:
+        Teahome h=new Teahome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_confirmActionPerformed
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // TODO add your handling code here:
+        Teahome h=new Teahome();
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments
