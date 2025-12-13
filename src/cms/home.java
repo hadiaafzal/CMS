@@ -42,7 +42,6 @@ public class home extends javax.swing.JFrame {
         login = new javax.swing.JButton();
         fvoucher = new javax.swing.JButton();
         sassign = new javax.swing.JButton();
-        announcement1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -203,16 +202,6 @@ public class home extends javax.swing.JFrame {
         });
         getContentPane().add(sassign, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 210, 230, 59));
 
-        announcement1.setBackground(new java.awt.Color(204, 204, 204));
-        announcement1.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        announcement1.setText("huhuhuh");
-        announcement1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                announcement1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(announcement1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, 230, 59));
-
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
 
@@ -286,10 +275,6 @@ public class home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void announcement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_announcement1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_announcement1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -319,7 +304,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton about;
     private javax.swing.JButton addclass;
     private javax.swing.JButton announcement;
-    private javax.swing.JButton announcement1;
     private javax.swing.JButton cpassword;
     private javax.swing.JButton fvoucher;
     private javax.swing.JButton home;
