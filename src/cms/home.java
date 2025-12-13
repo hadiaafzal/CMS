@@ -326,7 +326,7 @@ public class home extends javax.swing.JFrame {
                 announcementActionPerformed(evt);
             }
         });
-        getContentPane().add(announcement1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 230, 59));
+        getContentPane().add(announcement1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 300, 230, 59));
 
         login1.setBackground(new java.awt.Color(255, 0, 51));
         login1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -462,6 +462,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton addclass;
     private javax.swing.JButton addclass1;
     private javax.swing.JButton announcement;
+    private javax.swing.JButton announcement1;
     private javax.swing.JButton cpassword;
     private javax.swing.JButton cpassword1;
     private javax.swing.JButton fvoucher;
