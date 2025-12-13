@@ -462,7 +462,6 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton addclass;
     private javax.swing.JButton addclass1;
     private javax.swing.JButton announcement;
-    private javax.swing.JButton announcement1;
     private javax.swing.JButton cpassword;
     private javax.swing.JButton cpassword1;
     private javax.swing.JButton fvoucher;
