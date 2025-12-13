@@ -87,7 +87,7 @@ public ResultSet teacherDetails(String id, String pass){
     public static void main(String[] args) {
         // TODO code application logic here
        CMS db=new CMS();
-       login lg=new login();
+        login lg=new login();
        lg.setVisible(true);
     }
     
