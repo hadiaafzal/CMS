@@ -31,9 +31,8 @@ public class home extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        about = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
-        home = new javax.swing.JButton();
+        about = new javax.swing.JButton();
         profile = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -47,6 +46,7 @@ public class home extends javax.swing.JFrame {
         fvoucher = new javax.swing.JButton();
         cpassword = new javax.swing.JButton();
         announcement = new javax.swing.JButton();
+        home1 = new javax.swing.JButton();
         cpassword1 = new javax.swing.JButton();
         schedule1 = new javax.swing.JButton();
         addclass1 = new javax.swing.JButton();
@@ -71,23 +71,14 @@ public class home extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 153));
         jLabel7.setText("UNIVERSITY");
 
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/logo1.jpg"))); // NOI18N
+
         about.setBackground(new java.awt.Color(204, 204, 204));
         about.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         about.setText("ABOUT");
         about.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 aboutActionPerformed(evt);
-            }
-        });
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/logo1.jpg"))); // NOI18N
-
-        home.setBackground(new java.awt.Color(204, 204, 204));
-        home.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        home.setText("HOME");
-        home.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                homeActionPerformed(evt);
             }
         });
 
@@ -245,6 +236,15 @@ public class home extends javax.swing.JFrame {
                         .addGap(49, 49, 49))))
         );
 
+        home1.setBackground(new java.awt.Color(204, 204, 204));
+        home1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        home1.setText("HOME");
+        home1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                home1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -257,10 +257,10 @@ public class home extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(128, 128, 128)
-                .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(home1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(87, Short.MAX_VALUE))
         );
@@ -272,8 +272,8 @@ public class home extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(home, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(home1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -360,7 +360,7 @@ public class home extends javax.swing.JFrame {
         getContentPane().add(sassign1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 230, 59));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 910, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -421,16 +421,17 @@ public class home extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
-    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_homeActionPerformed
-
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        about a=new about();
+        About a=new About();
         a.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_aboutActionPerformed
+
+    private void home1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_home1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_home1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -467,7 +468,7 @@ public class home extends javax.swing.JFrame {
     private javax.swing.JButton cpassword1;
     private javax.swing.JButton fvoucher;
     private javax.swing.JButton fvoucher1;
-    private javax.swing.JButton home;
+    private javax.swing.JButton home1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -44,11 +44,12 @@ public class TAbout extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(102, 102, 102));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 0, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/logo1.jpg"))); // NOI18N
 
@@ -60,9 +61,8 @@ public class TAbout extends javax.swing.JFrame {
         jLabel21.setForeground(new java.awt.Color(255, 255, 153));
         jLabel21.setText("UNIVERSITY");
 
-        profile.setBackground(new java.awt.Color(0, 102, 255));
+        profile.setBackground(new java.awt.Color(204, 204, 204));
         profile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        profile.setForeground(new java.awt.Color(255, 255, 255));
         profile.setText("A");
         profile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,9 +70,8 @@ public class TAbout extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 0, 255));
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("ABOUT");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,9 +79,8 @@ public class TAbout extends javax.swing.JFrame {
             }
         });
 
-        home.setBackground(new java.awt.Color(255, 0, 255));
+        home.setBackground(new java.awt.Color(204, 204, 204));
         home.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        home.setForeground(new java.awt.Color(255, 255, 255));
         home.setText("HOME");
         home.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,7 +107,7 @@ public class TAbout extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
+                .addContainerGap(233, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,28 +130,34 @@ public class TAbout extends javax.swing.JFrame {
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
         jLabel1.setBackground(new java.awt.Color(102, 0, 102));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("ABOUT THIS CMS");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 162, -1, 56));
 
         jTextArea2.setEditable(false);
-        jTextArea2.setBackground(new java.awt.Color(255, 204, 255));
+        jTextArea2.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jTextArea2.setRows(5);
-        jTextArea2.setText("University CMS Platform\n\nManaged by the Office of Information Technology\n[GLOBL VISION UNIVERSITY]\nVersion 3.2.1 | August 2025 Release\nThis system is the official content management platform for university websites. Unauthorized access or use is prohibited.\nFor technical assistance, please visit the [IT Support Portal](https://support.university.edu) or call the Helpdesk at 555-1234.\n[Accessibility Statement](www.university.edu) | [Acceptable Use Policy](www.university.edu)\nCopyright © 2025 The Regents of [University Name]. All rights reserved.");
+        jTextArea2.setText("University CMS Platform\n\nManaged by the Office of Information Technology\n[GLOBL VISION UNIVERSITY]\nVersion 3.2.1 | August 2025 Release\nThis system is the official content management platform for university websites. Unauthorized access or use is\n prohibited.\nFor technical assistance, please visit the [IT Support Portal](https://support.university.edu) or call the Helpdesk at 555-1234.\n[Accessibility Statement](www.university.edu) | [Acceptable Use Policy](www.university.edu)\nCopyright © 2025 The Regents of [University Name]. All rights reserved.");
         jScrollPane2.setViewportView(jTextArea2);
 
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 790, 210));
+
         jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 204, 255));
+        jTextArea1.setBackground(new java.awt.Color(204, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(0, 153, 153));
         jTextArea1.setRows(5);
         jTextArea1.setText("I created a CMS using Java Swing, designing the interface with components like JFrame,\n JPanel, JTable, JLabel, JButton, and JTextField. \nI connected the system to a database using JDBC to perform all CRUD operations for managing content.\n\n\nEvent handling through ActionListeners made the GUI fully interactive and ensured smooth user operations.");
         jTextArea1.setAlignmentX(1.0F);
         jTextArea1.setAlignmentY(2.0F);
         jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 748, 128));
 
         jTextField1.setBackground(new java.awt.Color(204, 0, 51));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -164,6 +168,7 @@ public class TAbout extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 620, 98, -1));
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(51, 255, 255));
@@ -174,6 +179,7 @@ public class TAbout extends javax.swing.JFrame {
                 jTextField2ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 650, 111, -1));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(51, 255, 255));
@@ -184,6 +190,7 @@ public class TAbout extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 680, 111, -1));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(51, 255, 255));
@@ -194,70 +201,7 @@ public class TAbout extends javax.swing.JFrame {
                 jTextField4ActionPerformed(evt);
             }
         });
-
-        jLabel2.setBackground(new java.awt.Color(102, 0, 51));
-        jLabel2.setText("photoooooooo");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(88, 88, 88)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 748, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 847, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(269, 269, 269)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(37, 37, 37)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(6, 6, 6))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGap(220, 220, 220))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(27, 27, 27)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(150, 150, 150)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(191, 191, 191))
-        );
+        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 620, 111, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,7 +219,7 @@ public class TAbout extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        profile p=new profile();
+        Tprofile p=new Tprofile();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
@@ -326,7 +270,6 @@ public class TAbout extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JPanel jPanel1;

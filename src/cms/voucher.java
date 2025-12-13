@@ -394,7 +394,7 @@ public class voucher extends javax.swing.JFrame {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        about a=new about();
+        About a=new About();
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed

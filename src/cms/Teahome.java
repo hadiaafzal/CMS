@@ -199,7 +199,7 @@ public class Teahome extends javax.swing.JFrame {
 
     private void tcpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcpasswordActionPerformed
         // TODO add your handling code here:
-        tcpassword tcp=new tcpassword();
+        teaPassword tcp=new teaPassword();
         tcp.setVisible(true);
         dispose();
     }//GEN-LAST:event_tcpasswordActionPerformed
@@ -241,7 +241,7 @@ public class Teahome extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-tprofile p=new tprofile();
+Tprofile p=new Tprofile();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
