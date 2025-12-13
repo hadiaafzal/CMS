@@ -39,14 +39,23 @@ public class addclass extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         confirm = new javax.swing.JButton();
-        jRadioButton10 = new javax.swing.JRadioButton();
-        jRadioButton11 = new javax.swing.JRadioButton();
-        jRadioButton12 = new javax.swing.JRadioButton();
-        jRadioButton13 = new javax.swing.JRadioButton();
+        jPanel5 = new javax.swing.JPanel();
         jRadioButton14 = new javax.swing.JRadioButton();
-        jRadioButton15 = new javax.swing.JRadioButton();
-        jRadioButton16 = new javax.swing.JRadioButton();
+        jPanel4 = new javax.swing.JPanel();
         jRadioButton17 = new javax.swing.JRadioButton();
+        jPanel3 = new javax.swing.JPanel();
+        jRadioButton10 = new javax.swing.JRadioButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jRadioButton11 = new javax.swing.JRadioButton();
+        jPanel7 = new javax.swing.JPanel();
+        jRadioButton12 = new javax.swing.JRadioButton();
+        jPanel8 = new javax.swing.JPanel();
+        jRadioButton15 = new javax.swing.JRadioButton();
+        jPanel9 = new javax.swing.JPanel();
+        jRadioButton13 = new javax.swing.JRadioButton();
+        jPanel10 = new javax.swing.JPanel();
+        jRadioButton16 = new javax.swing.JRadioButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -137,7 +146,7 @@ public class addclass extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 0, 51));
         jLabel5.setText("2ND Semester Courses:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 280, 70));
 
@@ -168,93 +177,225 @@ public class addclass extends javax.swing.JFrame {
         });
         getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 520, 176, 63));
 
-        jRadioButton10.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton10.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton10.setText("Calculus & Analytical Geometry");
-        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton10ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 252, 37));
-
-        jRadioButton11.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton11.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton11.setText("Object Oriented Programming");
-        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton11ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 252, 37));
-
-        jRadioButton12.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton12.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton12.setText("Mathematics-I");
-        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton12ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 252, 37));
-
-        jRadioButton13.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton13.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton13.setText("Digital Logic Design");
-        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton13ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 252, 37));
-
-        jRadioButton14.setBackground(new java.awt.Color(0, 0, 0));
+        jRadioButton14.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton14.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton14.setForeground(new java.awt.Color(255, 0, 51));
         jRadioButton14.setText("Multivariable Calculus");
         jRadioButton14.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton14ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 252, 37));
 
-        jRadioButton15.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton15.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton15.setText("Mathematics-II");
-        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton15ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 420, 252, 37));
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(jRadioButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton14, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
 
-        jRadioButton16.setBackground(new java.awt.Color(0, 0, 0));
-        jRadioButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton16.setForeground(new java.awt.Color(204, 204, 204));
-        jRadioButton16.setText("Linear Algebra");
-        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton16ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jRadioButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, 252, 37));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 260, 40));
 
-        jRadioButton17.setBackground(new java.awt.Color(0, 0, 0));
+        jRadioButton17.setBackground(new java.awt.Color(255, 255, 255));
         jRadioButton17.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jRadioButton17.setForeground(new java.awt.Color(204, 204, 204));
+        jRadioButton17.setForeground(new java.awt.Color(255, 0, 51));
         jRadioButton17.setText("Database Mangement");
         jRadioButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton17ActionPerformed(evt);
             }
         });
-        getContentPane().add(jRadioButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 252, 37));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(jRadioButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton17, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 250, 40));
+
+        jRadioButton10.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton10.setForeground(new java.awt.Color(255, 0, 51));
+        jRadioButton10.setText("Calculus & Analytical Geometry");
+        jRadioButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton10ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jRadioButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 250, 40));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 242, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 37, Short.MAX_VALUE)
+        );
+
+        jRadioButton11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton11.setForeground(new java.awt.Color(255, 0, 0));
+        jRadioButton11.setText("Object Oriented Programming");
+        jRadioButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton11ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jRadioButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 15, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton11)
+                .addGap(12, 12, 12))
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 250, 40));
+
+        jRadioButton12.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton12.setForeground(new java.awt.Color(255, 0, 51));
+        jRadioButton12.setText("Mathematics-I");
+        jRadioButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton12ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addComponent(jRadioButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 250, 40));
+
+        jRadioButton15.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton15.setForeground(new java.awt.Color(255, 0, 51));
+        jRadioButton15.setText("Mathematics-II");
+        jRadioButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton15ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton15, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 260, 40));
+
+        jRadioButton13.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton13.setForeground(new java.awt.Color(255, 0, 0));
+        jRadioButton13.setText("Digital Logic Design");
+        jRadioButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton13ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jRadioButton13, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 260, -1));
+
+        jRadioButton16.setBackground(new java.awt.Color(255, 255, 255));
+        jRadioButton16.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jRadioButton16.setForeground(new java.awt.Color(255, 0, 51));
+        jRadioButton16.setText("Linear Algebra");
+        jRadioButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton16ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jRadioButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(jRadioButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 310, -1, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
@@ -366,6 +507,15 @@ public class addclass extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JRadioButton jRadioButton10;
     private javax.swing.JRadioButton jRadioButton11;
     private javax.swing.JRadioButton jRadioButton12;
