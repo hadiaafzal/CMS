@@ -145,10 +145,10 @@ public class addclass extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 0, 51));
-        jLabel5.setText("2ND Semester Courses:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, 280, 70));
+        jLabel5.setText("2ND SEMESTER COURSES");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 440, 70));
 
         jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
