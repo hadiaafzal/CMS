@@ -263,7 +263,7 @@ try {
 
     private void cpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordActionPerformed
         // TODO add your handling code here:
-        cpassword cp=new cpassword(ID);
+        cpassword cp=new cpassword(FullName,ID);
         cp.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpasswordActionPerformed
@@ -284,7 +284,7 @@ try {
 
     private void sassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sassignActionPerformed
         // TODO add your handling code here:
-        sassign sas=new sassign(ID);
+        sassign sas=new sassign(FullName,ID);
         sas.setVisible(true);
         dispose();
     }//GEN-LAST:event_sassignActionPerformed
