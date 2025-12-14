@@ -272,7 +272,7 @@ try {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-         TAbout a=new TAbout();
+         TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
              

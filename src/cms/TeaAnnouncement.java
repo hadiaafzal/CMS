@@ -11,9 +11,15 @@ package cms;
 public class TeaAnnouncement extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TeaAnnouncement.class.getName());
-
+    private String ID;
     public TeaAnnouncement() {
         initComponents();
+    }
+    public TeaAnnouncement(String name,String ID) {
+        initComponents();
+        this.ID=ID;
+        fullname.setText(name);
+        teacherid.setText(ID);
     }
 
     /**
@@ -37,6 +43,10 @@ public class TeaAnnouncement extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        fullname = new javax.swing.JTextField();
+        teacherid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -135,7 +145,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 cancelActionPerformed(evt);
             }
         });
-        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 560, 150, 60));
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, 150, 60));
 
         confirm.setBackground(new java.awt.Color(204, 255, 255));
         confirm.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -146,59 +156,82 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 confirmActionPerformed(evt);
             }
         });
-        getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 560, 150, 60));
+        getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 550, 150, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Upload ANNOUNCEMENT");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane2.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 510, 270));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 510, 270));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel10.setText("Name:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 150, 70, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel6.setText("T. ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 200, 60, 40));
+
+        fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 170, 40));
+
+        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        teacherid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teacheridActionPerformed(evt);
+            }
+        });
+        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 170, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 840, 580));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 840, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-Tprofile p=new Tprofile();
+Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void thomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thomeActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_thomeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-      TAbout a=new TAbout();
+      TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-                Teahome h=new Teahome();
+                Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-                Teahome h=new Teahome();
+                Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
+
+    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_teacheridActionPerformed
 
     /**
      * @param args the command line arguments
@@ -229,8 +262,11 @@ Tprofile p=new Tprofile();
     private javax.swing.JButton about;
     private javax.swing.JButton cancel;
     private javax.swing.JButton confirm;
+    private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -238,6 +274,7 @@ Tprofile p=new Tprofile();
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton profile;
+    private javax.swing.JTextField teacherid;
     private javax.swing.JButton thome;
     // End of variables declaration//GEN-END:variables
 }

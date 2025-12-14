@@ -11,12 +11,17 @@ package cms;
 public class TAbout extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TAbout.class.getName());
-
+    private String ID;
     /**
      * Creates new form TAbout
      */
     public TAbout() {
         initComponents();
+    }
+    public TAbout(String ID) {
+        initComponents();
+        this.ID=ID;
+        
     }
 
     /**
@@ -208,7 +213,7 @@ public class TAbout extends javax.swing.JFrame {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed
@@ -219,7 +224,7 @@ public class TAbout extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        Tprofile p=new Tprofile();
+        Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed

@@ -11,11 +11,14 @@ package cms;
 public class stattendence extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(stattendence.class.getName());
-
+    private String ID;
     public stattendence() {
         initComponents();
     }
-
+    public stattendence(String ID) {
+        initComponents();
+        this.ID=ID;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,7 +35,6 @@ public class stattendence extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         thome = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        login = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         confirm = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -127,17 +129,6 @@ public class stattendence extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        login.setBackground(new java.awt.Color(255, 0, 51));
-        login.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("LOGOUT");
-        login.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
-            }
-        });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 490, 129, 59));
-
         cancel.setBackground(new java.awt.Color(204, 255, 255));
         cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         cancel.setForeground(new java.awt.Color(255, 0, 0));
@@ -211,50 +202,43 @@ public class stattendence extends javax.swing.JFrame {
         jLabel2.setText("STUDENT ATTENDENCE");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Supreme_Traders\\OneDrive\\Documents\\NetBeansProjects\\CMS\\src\\logo\\blurimg.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        // TODO add your handling code here:
-        login l=new login();
-        l.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_loginActionPerformed
-
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-Tprofile p=new Tprofile();
+Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void thomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thomeActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_thomeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-      TAbout a=new TAbout();
+      TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-                Teahome h=new Teahome();
+                Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-                Teahome h=new Teahome();
+                Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
@@ -296,7 +280,6 @@ Tprofile p=new Tprofile();
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton login;
     private javax.swing.JButton profile;
     private javax.swing.JButton thome;
     // End of variables declaration//GEN-END:variables

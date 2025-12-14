@@ -13,6 +13,7 @@ public class Teahome extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Teahome.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form Teahome
      */
@@ -36,6 +37,7 @@ try {
 } catch(Exception e){
             System.out.println(e);
         }
+        this.FullName=fullname.getText();
     }
     
 
@@ -244,35 +246,35 @@ try {
 
     private void tcpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tcpasswordActionPerformed
         // TODO add your handling code here:
-        teaPassword tcp=new teaPassword();
+        teaPassword tcp=new teaPassword(FullName,ID);
         tcp.setVisible(true);
         dispose();
     }//GEN-LAST:event_tcpasswordActionPerformed
 
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         // TODO add your handling code here:
-                TeaSchedule tsc=new TeaSchedule();
+        TeaSchedule tsc=new TeaSchedule(FullName,ID);
         tsc.setVisible(true);
         dispose();
     }//GEN-LAST:event_scheduleActionPerformed
 
     private void teaannouncementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaannouncementActionPerformed
         // TODO add your handling code here:
-                TeaAnnouncement ta=new TeaAnnouncement();
+                TeaAnnouncement ta=new TeaAnnouncement(FullName,ID);
         ta.setVisible(true);
         dispose();
     }//GEN-LAST:event_teaannouncementActionPerformed
 
     private void uploadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uploadActionPerformed
         // TODO add your handling code here:
-        Uploadmarks m=new Uploadmarks();
+        Uploadmarks m=new Uploadmarks(ID);
         m.setVisible(true);
         dispose();
     }//GEN-LAST:event_uploadActionPerformed
 
     private void attendenceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendenceActionPerformed
         // TODO add your handling code here:
-         stattendence a=new stattendence();
+         stattendence a=new stattendence(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_attendenceActionPerformed
@@ -297,7 +299,7 @@ try {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        TAbout a=new TAbout();
+        TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
