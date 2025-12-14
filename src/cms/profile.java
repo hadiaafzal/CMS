@@ -15,8 +15,22 @@ public class profile extends javax.swing.JFrame {
     /**
      * Creates new form profile
      */
-    public profile() {
+        public profile() {
         initComponents();
+        // This constructor intentionally leaves the fields empty/blank
+    }
+    
+    
+public profile(String st_fname, String st_lname, String st_id, String sdept,String st_email, String st_pno) {
+        initComponents();
+        name1.setText(st_fname);
+        lname1.setText(st_lname);
+        st_id1.setText(st_id);
+        sdepartment1.setText(sdept);
+        email1.setText(st_email);
+        phoneNo1.setText(st_pno);
+  
+        
     }
 
     /**
@@ -52,19 +66,19 @@ public class profile extends javax.swing.JFrame {
         about = new javax.swing.JButton();
         home = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
+        name1 = new javax.swing.JTextField();
+        st_id1 = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        lname1 = new javax.swing.JTextField();
+        email1 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         save1 = new javax.swing.JButton();
-        jTextField12 = new javax.swing.JTextField();
+        phoneNo1 = new javax.swing.JTextField();
         cancel1 = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        jTextField11 = new javax.swing.JTextField();
+        sdepartment1 = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -290,11 +304,18 @@ public class profile extends javax.swing.JFrame {
         jLabel10.setText("First Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 100, -1));
 
-        jTextField7.setBackground(new java.awt.Color(204, 255, 255));
-        getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
+        name1.setBackground(new java.awt.Color(204, 255, 255));
+        name1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        name1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                name1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
 
-        jTextField9.setBackground(new java.awt.Color(204, 255, 255));
-        getContentPane().add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
+        st_id1.setBackground(new java.awt.Color(204, 255, 255));
+        st_id1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(st_id1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -312,22 +333,24 @@ public class profile extends javax.swing.JFrame {
         jLabel11.setText("Last Name:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 77, -1));
 
-        jTextField8.setEditable(false);
-        jTextField8.setBackground(new java.awt.Color(204, 255, 255));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        lname1.setEditable(false);
+        lname1.setBackground(new java.awt.Color(204, 255, 255));
+        lname1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lname1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                lname1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 170, 33));
+        getContentPane().add(lname1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 170, 33));
 
-        jTextField10.setBackground(new java.awt.Color(204, 255, 255));
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        email1.setBackground(new java.awt.Color(204, 255, 255));
+        email1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        email1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                email1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 160, 33));
+        getContentPane().add(email1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 190, 33));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -344,14 +367,15 @@ public class profile extends javax.swing.JFrame {
         });
         getContentPane().add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 130, 53));
 
-        jTextField12.setEditable(false);
-        jTextField12.setBackground(new java.awt.Color(204, 255, 255));
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        phoneNo1.setEditable(false);
+        phoneNo1.setBackground(new java.awt.Color(204, 255, 255));
+        phoneNo1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        phoneNo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                phoneNo1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 172, 33));
+        getContentPane().add(phoneNo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 172, 33));
 
         cancel1.setBackground(new java.awt.Color(204, 255, 204));
         cancel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -368,13 +392,14 @@ public class profile extends javax.swing.JFrame {
         jLabel15.setText("Email");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 77, -1));
 
-        jTextField11.setBackground(new java.awt.Color(204, 255, 255));
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        sdepartment1.setBackground(new java.awt.Color(204, 255, 255));
+        sdepartment1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        sdepartment1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                sdepartment1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
+        getContentPane().add(sdepartment1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -436,21 +461,25 @@ public class profile extends javax.swing.JFrame {
         
     }//GEN-LAST:event_save1ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void email1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_email1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_email1ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void lname1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lname1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_lname1ActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void sdepartment1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sdepartment1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_sdepartment1ActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void phoneNo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phoneNo1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_phoneNo1ActionPerformed
+
+    private void name1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_name1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_name1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,13 +503,14 @@ public class profile extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new profile().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new profile( ).setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
     private javax.swing.JButton cancel;
     private javax.swing.JButton cancel1;
+    private javax.swing.JTextField email1;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -503,19 +533,18 @@ public class profile extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField lname1;
+    private javax.swing.JTextField name1;
+    private javax.swing.JTextField phoneNo1;
     private javax.swing.JButton profile;
     private javax.swing.JButton save;
     private javax.swing.JButton save1;
+    private javax.swing.JTextField sdepartment1;
+    private javax.swing.JTextField st_id1;
     // End of variables declaration//GEN-END:variables
 }
