@@ -18,6 +18,9 @@ public class About extends javax.swing.JFrame {
     public About() {
         initComponents();
     }
+    public About(String ID) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

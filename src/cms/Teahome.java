@@ -12,7 +12,7 @@ import java.sql.*;
 public class Teahome extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Teahome.class.getName());
-
+    private String ID;
     /**
      * Creates new form Teahome
      */
@@ -24,6 +24,7 @@ public class Teahome extends javax.swing.JFrame {
         CMS db=new CMS();
         teacherid.setText(ID);
         ResultSet rs = db.teacherName(ID);
+        this.ID=ID;
 
 try {
     if (rs.next()) {
@@ -58,7 +59,7 @@ try {
         upload = new javax.swing.JButton();
         attendence = new javax.swing.JButton();
         tcpassword = new javax.swing.JButton();
-        login = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
         teaannouncement = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -193,16 +194,16 @@ try {
         });
         getContentPane().add(tcpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 230, 59));
 
-        login.setBackground(new java.awt.Color(255, 0, 51));
-        login.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        login.setForeground(new java.awt.Color(255, 255, 255));
-        login.setText("LOGOUT");
-        login.addActionListener(new java.awt.event.ActionListener() {
+        logout.setBackground(new java.awt.Color(255, 0, 51));
+        logout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        logout.setForeground(new java.awt.Color(255, 255, 255));
+        logout.setText("LOGOUT");
+        logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                logoutActionPerformed(evt);
             }
         });
-        getContentPane().add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
+        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
 
         teaannouncement.setBackground(new java.awt.Color(204, 204, 204));
         teaannouncement.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -276,16 +277,15 @@ try {
         dispose();
     }//GEN-LAST:event_attendenceActionPerformed
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
         // TODO add your handling code here:
                login l=new login();
         l.setVisible(true);
         dispose();
-    }//GEN-LAST:event_loginActionPerformed
+    }//GEN-LAST:event_logoutActionPerformed
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        String ID=teacherid.getText();
         Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
@@ -343,7 +343,7 @@ try {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton login;
+    private javax.swing.JButton logout;
     private javax.swing.JButton profile;
     private javax.swing.JButton schedule;
     private javax.swing.JButton tcpassword;
