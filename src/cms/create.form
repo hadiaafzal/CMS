@@ -115,7 +115,7 @@
                                   <Component id="jLabel12" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
                                   <Component id="st_lname" alignment="0" min="-2" pref="205" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="sdept" min="-2" pref="209" max="-2" attributes="0"/>
+                                  <Component id="st_dept" min="-2" pref="209" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -199,7 +199,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="sconpass" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                          <Component id="sdept" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
+                          <Component id="st_dept" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="create" min="-2" pref="50" max="-2" attributes="0"/>
@@ -386,7 +386,7 @@
                 <Property name="text" type="java.lang.String" value="Phone No:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JComboBox" name="sdept">
+            <Component class="javax.swing.JComboBox" name="st_dept">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="18" style="3"/>

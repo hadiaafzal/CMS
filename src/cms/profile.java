@@ -32,11 +32,13 @@ try {
     if (rs.next()) {
         String fname = rs.getString("st_fname");
         String lname = rs.getString("st_lname");
+        String dept = rs.getString("st_dept");
         String email = rs.getString("st_email");
         String pno = rs.getString("st_pno");
         st_fname.setText(fname);
         st_lname.setText(lname);
         st_id.setText(ID);
+        st_dept.setText(dept);
         st_email.setText(email);
         st_pno.setText(pno);
     }
@@ -76,7 +78,7 @@ try {
         st_pno = new javax.swing.JTextField();
         cancel = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        st_department = new javax.swing.JTextField();
+        st_dept = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -259,14 +261,14 @@ try {
         jLabel15.setText("Email");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 77, -1));
 
-        st_department.setBackground(new java.awt.Color(204, 255, 255));
-        st_department.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        st_department.addActionListener(new java.awt.event.ActionListener() {
+        st_dept.setBackground(new java.awt.Color(204, 255, 255));
+        st_dept.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        st_dept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                st_departmentActionPerformed(evt);
+                st_deptActionPerformed(evt);
             }
         });
-        getContentPane().add(st_department, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
+        getContentPane().add(st_dept, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,9 +327,9 @@ try {
         // TODO add your handling code here:
     }//GEN-LAST:event_st_lnameActionPerformed
 
-    private void st_departmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_st_departmentActionPerformed
+    private void st_deptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_st_deptActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_st_departmentActionPerformed
+    }//GEN-LAST:event_st_deptActionPerformed
 
     private void st_pnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_st_pnoActionPerformed
         // TODO add your handling code here:
@@ -380,7 +382,7 @@ try {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton profile;
     private javax.swing.JButton save;
-    private javax.swing.JTextField st_department;
+    private javax.swing.JTextField st_dept;
     private javax.swing.JTextField st_email;
     private javax.swing.JTextField st_fname;
     private javax.swing.JTextField st_id;

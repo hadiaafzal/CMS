@@ -46,7 +46,7 @@ public class create extends javax.swing.JFrame {
         create = new javax.swing.JButton();
         st_pno = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        sdept = new javax.swing.JComboBox<>();
+        st_dept = new javax.swing.JComboBox<>();
         spassword1 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -145,9 +145,9 @@ public class create extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Phone No:");
 
-        sdept.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        sdept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "Computer Science", "Cyber Security", "Software Engineering", "Information Technology", "Artificial Intelligence", "Data Science", " " }));
-        sdept.setToolTipText("");
+        st_dept.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        st_dept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "Computer Science", "Cyber Security", "Software Engineering", "Information Technology", "Artificial Intelligence", "Data Science", " " }));
+        st_dept.setToolTipText("");
 
         spassword1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         spassword1.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,7 +169,7 @@ public class create extends javax.swing.JFrame {
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(st_lname, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(sdept, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(st_dept, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
@@ -233,7 +233,7 @@ public class create extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sconpass, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sdept, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(st_dept, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(create, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -319,13 +319,13 @@ public class create extends javax.swing.JFrame {
          CMS db=new CMS();
         
         if(st_id.getText().equals("")||st_fname.getText().equals("")||st_lname.getText().equals("")||
-                st_email.getText().equals("")||st_pno.getText().equals("")||sconpass.getText().equals("")){
+                st_email.getText().equals("")||st_pno.getText().equals("")||sconpass.getText().equals("")||st_dept.getSelectedIndex()==0){
             
             JOptionPane.showMessageDialog(this,"register Error","register alert",1);
         }
         else{
         if(db.rstudents(st_id.getText(),st_fname.getText(),st_lname.getText(),
-                st_email.getText(),st_pno.getText(),sconpass.getText())==1){
+                st_email.getText(),st_pno.getText(),sconpass.getText(),st_dept.getSelectedItem().toString())==1){
         JOptionPane.showMessageDialog(this,"register Success","register alert",1);
         
         login l=new login();
@@ -390,9 +390,9 @@ public class create extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField3;
     private javax.swing.JPasswordField sconpass;
-    private javax.swing.JComboBox<String> sdept;
     private javax.swing.JLabel spassword;
     private javax.swing.JLabel spassword1;
+    private javax.swing.JComboBox<String> st_dept;
     private javax.swing.JTextField st_email;
     private javax.swing.JTextField st_fname;
     private javax.swing.JTextField st_id;

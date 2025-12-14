@@ -31,11 +31,11 @@ System.out.println("Db is connected");
     System.out.println(e);
 }
 }
-public int rstudents(String id, String fname, String lname, String email, String pno, String pass){
+public int rstudents(String id, String fname, String lname, String email, String pno, String pass, String dept){
     
     int status=0;
     
-    String sql="INSERT INTO `students` (`st_id`, `st_fname`, `st_lname`, `st_email`, `st_pno`, `st_pass`)VALUES ('"+id+"','"+fname+"','"+lname+"','"+email+"','"+pno+"','"+pass+"')";
+    String sql="INSERT INTO `students` (`st_id`, `st_fname`, `st_lname`, `st_email`, `st_pno`, `st_pass`, `st_dept`)VALUES ('"+id+"','"+fname+"','"+lname+"','"+email+"','"+pno+"','"+pass+"','"+dept+"')";
     try{
     st.executeUpdate(sql);
     status =1;
