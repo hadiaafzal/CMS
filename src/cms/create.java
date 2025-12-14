@@ -146,7 +146,7 @@ public class create extends javax.swing.JFrame {
         jLabel12.setText("Phone No:");
 
         sdept.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        sdept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Computer Science", "Cyber Security", "Software Engineering", "Information Technology", "Artificial Intelligence", "Data Science", "" }));
+        sdept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Department", "Computer Science", "Cyber Security", "Software Engineering", "Information Technology", "Artificial Intelligence", "Data Science", " " }));
         sdept.setToolTipText("");
 
         spassword1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -337,17 +337,7 @@ public class create extends javax.swing.JFrame {
         }
          
         }
-            String Name=st_fname.getText();
-            String LastName=st_lname.getText();
-            String ID=st_id.getText();
-            String Email=st_email.getText();
-            String Password=jPasswordField3.getText();
-            String Phone=st_pno.getText();
-            String Department = (String)sdept.getSelectedItem();
-            
-            profile details= new profile(Name,LastName,ID,Department,Email,Phone);
-            
-            
+           
             
             
             

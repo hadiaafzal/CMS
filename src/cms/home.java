@@ -458,7 +458,8 @@ try {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        profile p=new profile();
+        String ID=studentid.getText();
+        profile p=new profile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed

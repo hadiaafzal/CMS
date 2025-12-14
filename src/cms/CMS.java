@@ -82,7 +82,7 @@ public ResultSet teacherDetails(String id, String pass){
 }
 public ResultSet studentName(String id){
 
-    String sql="select st_fname,st_lname from students where st_id='"+id+"'";
+    String sql="select *from students where st_id='"+id+"'";
     try{
     rs=st.executeQuery(sql);
     }catch(Exception e){

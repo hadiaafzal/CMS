@@ -392,14 +392,15 @@
                   <Font name="Segoe UI" size="18" style="3"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="7">
-                    <StringItem index="0" value="Computer Science"/>
-                    <StringItem index="1" value="Cyber Security"/>
-                    <StringItem index="2" value="Software Engineering"/>
-                    <StringItem index="3" value="Information Technology"/>
-                    <StringItem index="4" value="Artificial Intelligence"/>
-                    <StringItem index="5" value="Data Science"/>
-                    <StringItem index="6" value=""/>
+                  <StringArray count="8">
+                    <StringItem index="0" value="Select Department"/>
+                    <StringItem index="1" value="Computer Science"/>
+                    <StringItem index="2" value="Cyber Security"/>
+                    <StringItem index="3" value="Software Engineering"/>
+                    <StringItem index="4" value="Information Technology"/>
+                    <StringItem index="5" value="Artificial Intelligence"/>
+                    <StringItem index="6" value="Data Science"/>
+                    <StringItem index="7" value=" "/>
                   </StringArray>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
