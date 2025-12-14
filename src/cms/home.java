@@ -274,14 +274,14 @@ try {
 
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         // TODO add your handling code here:
-        schedule sc=new schedule();
+        schedule sc=new schedule(ID);
         sc.setVisible(true);
         dispose();
     }//GEN-LAST:event_scheduleActionPerformed
 
     private void sassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sassignActionPerformed
         // TODO add your handling code here:
-        sassign sas=new sassign();
+        sassign sas=new sassign(ID);
         sas.setVisible(true);
         dispose();
     }//GEN-LAST:event_sassignActionPerformed

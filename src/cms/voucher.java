@@ -18,6 +18,9 @@ public class voucher extends javax.swing.JFrame {
     public voucher() {
         initComponents();
     }
+    public voucher(String ID) {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

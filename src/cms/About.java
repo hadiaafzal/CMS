@@ -9,9 +9,8 @@ package cms;
  * @author Dell
  */
 public class About extends javax.swing.JFrame {
-    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(About.class.getName());
-
+    private String ID;
     /**
      * Creates new form About
      */
@@ -20,6 +19,7 @@ public class About extends javax.swing.JFrame {
     }
     public About(String ID) {
         initComponents();
+        this.ID=ID;
     }
 
     /**
@@ -211,7 +211,7 @@ public class About extends javax.swing.JFrame {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        home h=new home();
+        home h=new home(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed
@@ -222,7 +222,7 @@ public class About extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        profile p=new profile();
+        profile p=new profile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
