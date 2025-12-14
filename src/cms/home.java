@@ -277,7 +277,7 @@ try {
 
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         // TODO add your handling code here:
-        schedule sc=new schedule(ID);
+        schedule sc=new schedule(FullName,ID);
         sc.setVisible(true);
         dispose();
     }//GEN-LAST:event_scheduleActionPerformed
