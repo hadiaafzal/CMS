@@ -11,14 +11,17 @@ package cms;
 public class cpassword extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(cpassword.class.getName());
-
+    private String ID;
     /**
      * Creates new form home
      */
     public cpassword() {
         initComponents();
     }
-
+    public cpassword(String ID) {
+        initComponents();
+        this.ID=ID;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -320,21 +323,21 @@ public class cpassword extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        profile p=new profile();
+        profile p=new profile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        home h=new home();
+        home h=new home(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        About a=new About();
+        About a=new About(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
@@ -349,14 +352,14 @@ public class cpassword extends javax.swing.JFrame {
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        home h=new home();
+        home h=new home(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-        home h=new home();
+        home h=new home(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed

@@ -288,7 +288,7 @@ try {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        About a=new About();
+        About a=new About(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed

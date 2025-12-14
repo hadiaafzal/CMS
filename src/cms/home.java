@@ -13,6 +13,7 @@ public class home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(home.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form home
      */
@@ -25,6 +26,7 @@ public class home extends javax.swing.JFrame {
         studentid.setText(ID);
         ResultSet rs = db.studentName(ID);
         this.ID=ID;
+        
 
 try {
     if (rs.next()) {
@@ -36,6 +38,7 @@ try {
 } catch(Exception e){
             System.out.println(e);
         }
+        this.FullName=fullname.getText();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -253,21 +256,21 @@ try {
 
     private void announcementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_announcementActionPerformed
         // TODO add your handling code here:
-        announcement a=new announcement();
+        announcement a=new announcement(FullName,ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_announcementActionPerformed
 
     private void cpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordActionPerformed
         // TODO add your handling code here:
-        cpassword cp=new cpassword();
+        cpassword cp=new cpassword(ID);
         cp.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpasswordActionPerformed
 
     private void fvoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fvoucherActionPerformed
         // TODO add your handling code here:
-        voucher v=new voucher();
+        voucher v=new voucher(ID);
         v.setVisible(true);
         dispose();
     }//GEN-LAST:event_fvoucherActionPerformed
