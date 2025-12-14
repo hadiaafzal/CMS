@@ -345,9 +345,8 @@ public class create extends javax.swing.JFrame {
             String Phone=st_pno.getText();
             String Department = (String)sdept.getSelectedItem();
             
-            profile details= new profile(Name,LastName,ID,Email,Password,Phone);
-            details.setVisible(true);
-             this.dispose();
+            profile details= new profile(Name,LastName,ID,Department,Email,Phone);
+            
             
             
             
