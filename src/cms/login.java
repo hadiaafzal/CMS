@@ -269,7 +269,7 @@ public class login extends javax.swing.JFrame {
         ResultSet rs;
         ResultSet trs;
         
-        
+        String ID=id.getText();
       
         
         try{
@@ -277,7 +277,7 @@ public class login extends javax.swing.JFrame {
         if(rs.next()){
         //match selection
         
-        String ID=id.getText();
+        
         
         home h=new home(ID);
         h.setVisible(true);
@@ -291,7 +291,7 @@ public class login extends javax.swing.JFrame {
         if(trs.next()){
         //match selection
         
-        Teahome th=new Teahome();
+        Teahome th=new Teahome(ID);
         th.setVisible(true);
         dispose();
         return;

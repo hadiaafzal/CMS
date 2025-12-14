@@ -12,7 +12,7 @@ import java.sql.*;
 public class profile extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(profile.class.getName());
-
+    private String ID;
     /**
      * Creates new form profile
      */
@@ -25,8 +25,8 @@ public class profile extends javax.swing.JFrame {
         initComponents();
         // This constructor intentionally leaves the fields empty/blank
         CMS db=new CMS();
-        st_id.setText(ID);
         ResultSet rs = db.studentName(ID);
+        this.ID=ID;
 
 try {
     if (rs.next()) {
@@ -295,7 +295,6 @@ try {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-        String ID=st_id.getText();
         home h=new home(ID);
         h.setVisible(true);
         dispose();
@@ -303,7 +302,6 @@ try {
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        String ID=st_id.getText();
         home h=new home(ID);
         h.setVisible(true);
         dispose();
@@ -312,7 +310,6 @@ try {
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        String ID=st_id.getText();
         home h=new home(ID);
         h.setVisible(true);
         dispose();

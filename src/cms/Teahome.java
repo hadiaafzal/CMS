@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cms;
+import java.sql.*;
 
 /**
  *
@@ -18,6 +19,24 @@ public class Teahome extends javax.swing.JFrame {
     public Teahome() {
         initComponents();
     }
+    public Teahome(String ID) {
+        initComponents();
+        CMS db=new CMS();
+        teacherid.setText(ID);
+        ResultSet rs = db.teacherName(ID);
+
+try {
+    if (rs.next()) {
+        String fname = rs.getString("t_fname");
+        String lname = rs.getString("t_lname");
+
+        fullname.setText(fname + " " + lname);
+    }
+} catch(Exception e){
+            System.out.println(e);
+        }
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,6 +60,10 @@ public class Teahome extends javax.swing.JFrame {
         tcpassword = new javax.swing.JButton();
         login = new javax.swing.JButton();
         teaannouncement = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        fullname = new javax.swing.JTextField();
+        teacherid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -191,6 +214,27 @@ public class Teahome extends javax.swing.JFrame {
         });
         getContentPane().add(teaannouncement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 233, 60));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Name:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 70, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("T. ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
+
+        fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
+
+        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        teacherid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teacheridActionPerformed(evt);
+            }
+        });
+        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
@@ -241,7 +285,8 @@ public class Teahome extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-Tprofile p=new Tprofile();
+        String ID=teacherid.getText();
+        Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
@@ -256,6 +301,10 @@ Tprofile p=new Tprofile();
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
+
+    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_teacheridActionPerformed
 
     /**
      * @param args the command line arguments
@@ -285,8 +334,11 @@ Tprofile p=new Tprofile();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
     private javax.swing.JButton attendence;
+    private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -296,6 +348,7 @@ Tprofile p=new Tprofile();
     private javax.swing.JButton schedule;
     private javax.swing.JButton tcpassword;
     private javax.swing.JButton teaannouncement;
+    private javax.swing.JTextField teacherid;
     private javax.swing.JButton upload;
     // End of variables declaration//GEN-END:variables
 }

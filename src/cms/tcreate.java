@@ -139,7 +139,7 @@ public class tcreate extends javax.swing.JFrame {
 
         dept.setBackground(new java.awt.Color(153, 153, 153));
         dept.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        dept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT DEPARTMENT", "CS", "SE", "AI", "CYBER", " " }));
+        dept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECT DEPARTMENT", "Information Technology", "Mathematics", "English", "Logistics", "Businesses", " " }));
 
         pno.setBackground(new java.awt.Color(153, 153, 153));
         pno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N

@@ -90,6 +90,16 @@ public ResultSet studentName(String id){
     }
     return rs;
 }
+public ResultSet teacherName(String id){
+
+    String sql="select *from teachers where t_id='"+id+"'";
+    try{
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
 
 
     /**
