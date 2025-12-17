@@ -279,10 +279,9 @@ try {
 
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         // TODO add your handling code here:
-        voucher v=new voucher(ID);
-        v.setVisible(true);
+        schedule sc=new schedule(FullName,ID);
+        sc.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_scheduleActionPerformed
 
     private void sassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sassignActionPerformed

@@ -88,7 +88,7 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
                 visibiltyMousePressed(evt);
             }
         });
-        getContentPane().add(visibilty, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 370, 60, 50));
+        getContentPane().add(visibilty, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 370, 50, 50));
 
         pass.setBackground(new java.awt.Color(153, 153, 153));
         pass.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -259,13 +259,13 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
         // Hide the password
         pass.setEchoChar('*'); // Default echo character
         // Change icon to 'show password' eye icon
-        //visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); 
+        visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/modifiedshowpass.png"))); 
         passwordVisible = false;
     } else {
         // Show the password
         pass.setEchoChar((char) 0); // Setting echo char to 0 reveals the text
         // Change icon to 'hide password' eye icon
-        //visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource(""))); 
+        visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/modifiedshowpass.png"))); 
         passwordVisible=true;
         }
 
