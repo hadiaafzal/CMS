@@ -100,7 +100,20 @@ public ResultSet teacherName(String id){
     }
     return rs;
 }
+public int changePass(String id,String cpass){
+    
+    int status=0;
+    
+    String sql="UPDATE `students` SET `st_pass` = '"+cpass+"' WHERE `students`.`st_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
 
+}
 
     /**
      * @param args the command line arguments
