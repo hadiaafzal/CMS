@@ -13,6 +13,7 @@ public class home extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(home.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form home
      */
@@ -25,6 +26,7 @@ public class home extends javax.swing.JFrame {
         studentid.setText(ID);
         ResultSet rs = db.studentName(ID);
         this.ID=ID;
+        
 
 try {
     if (rs.next()) {
@@ -36,6 +38,7 @@ try {
 } catch(Exception e){
             System.out.println(e);
         }
+        this.FullName=fullname.getText();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -234,6 +237,7 @@ try {
         jLabel10.setText("Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 70, 40));
 
+        studentid.setEditable(false);
         studentid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,6 +246,7 @@ try {
         });
         getContentPane().add(studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 140, 40));
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 140, 40));
 
@@ -253,35 +258,35 @@ try {
 
     private void announcementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_announcementActionPerformed
         // TODO add your handling code here:
-        announcement a=new announcement();
+        announcement a=new announcement(FullName,ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_announcementActionPerformed
 
     private void cpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpasswordActionPerformed
         // TODO add your handling code here:
-        cpassword cp=new cpassword();
+        cpassword cp=new cpassword(FullName,ID);
         cp.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpasswordActionPerformed
 
     private void fvoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fvoucherActionPerformed
         // TODO add your handling code here:
-        voucher v=new voucher();
+        voucher v=new voucher(ID);
         v.setVisible(true);
         dispose();
     }//GEN-LAST:event_fvoucherActionPerformed
 
     private void scheduleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scheduleActionPerformed
         // TODO add your handling code here:
-        schedule sc=new schedule(ID);
+        schedule sc=new schedule(FullName,ID);
         sc.setVisible(true);
         dispose();
     }//GEN-LAST:event_scheduleActionPerformed
 
     private void sassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sassignActionPerformed
         // TODO add your handling code here:
-        sassign sas=new sassign(ID);
+        sassign sas=new sassign(FullName,ID);
         sas.setVisible(true);
         dispose();
     }//GEN-LAST:event_sassignActionPerformed

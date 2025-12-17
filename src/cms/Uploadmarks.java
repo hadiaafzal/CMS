@@ -11,9 +11,13 @@ package cms;
 public class Uploadmarks extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Uploadmarks.class.getName());
-
+    private String ID;
     public Uploadmarks() {
         initComponents();
+    }
+    public Uploadmarks(String ID) {
+        initComponents();
+        this.ID=ID;
     }
 
     /**
@@ -199,35 +203,35 @@ public class Uploadmarks extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-Tprofile p=new Tprofile();
+Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void thomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thomeActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_thomeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-      TAbout a=new TAbout();
+      TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_confirmActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed

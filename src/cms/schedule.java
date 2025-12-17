@@ -289,5 +289,6 @@ public class schedule extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JButton profile;
     private javax.swing.JTextField stid;
+    private javax.swing.JTextField studentid;
     // End of variables declaration//GEN-END:variables
 }

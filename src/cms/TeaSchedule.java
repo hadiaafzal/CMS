@@ -11,9 +11,15 @@ package cms;
 public class TeaSchedule extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TeaSchedule.class.getName());
-
+    private String ID;
     public TeaSchedule() {
         initComponents();
+    }
+    public TeaSchedule(String name,String ID) {
+        initComponents();
+        this.ID=ID;
+        fullname.setText(name);
+        teacherid.setText(ID);
     }
 
     /**
@@ -36,6 +42,10 @@ public class TeaSchedule extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         attendance = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        fullname = new javax.swing.JTextField();
+        teacherid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -179,6 +189,29 @@ public class TeaSchedule extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 550, 280));
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Name:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 150, 70, 40));
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("T. ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
+
+        fullname.setEditable(false);
+        fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
+
+        teacherid.setEditable(false);
+        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        teacherid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teacheridActionPerformed(evt);
+            }
+        });
+        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 480));
 
@@ -187,31 +220,35 @@ public class TeaSchedule extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-Tprofile p=new Tprofile();
+Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void thomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thomeActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_thomeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-      TAbout a=new TAbout();
+      TAbout a=new TAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome();
+        Teahome h=new Teahome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_backActionPerformed
+
+    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_teacheridActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,14 +279,18 @@ Tprofile p=new Tprofile();
     private javax.swing.JButton about;
     private javax.swing.JTable attendance;
     private javax.swing.JButton back;
+    private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton profile;
+    private javax.swing.JTextField teacherid;
     private javax.swing.JButton thome;
     // End of variables declaration//GEN-END:variables
 }

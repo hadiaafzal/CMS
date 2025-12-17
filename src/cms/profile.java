@@ -4,6 +4,7 @@
  */
 package cms;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -173,6 +174,7 @@ try {
         jLabel10.setText("First Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 100, -1));
 
+        st_fname.setEditable(false);
         st_fname.setBackground(new java.awt.Color(204, 255, 255));
         st_fname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         st_fname.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +184,7 @@ try {
         });
         getContentPane().add(st_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
 
+        st_id.setEditable(false);
         st_id.setBackground(new java.awt.Color(204, 255, 255));
         st_id.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(st_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
@@ -236,7 +239,6 @@ try {
         });
         getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 130, 53));
 
-        st_pno.setEditable(false);
         st_pno.setBackground(new java.awt.Color(204, 255, 255));
         st_pno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         st_pno.addActionListener(new java.awt.event.ActionListener() {
@@ -261,6 +263,7 @@ try {
         jLabel15.setText("Email");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 77, -1));
 
+        st_dept.setEditable(false);
         st_dept.setBackground(new java.awt.Color(204, 255, 255));
         st_dept.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         st_dept.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +291,7 @@ try {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        About a=new About();
+        About a=new About(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
@@ -310,9 +313,23 @@ try {
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        home h=new home(ID);
-        h.setVisible(true);
-        dispose();
+        CMS db=new CMS();
+        if(!st_email.getText().equals("")&&!st_pno.getText().equals("")){
+            if(db.stdChangeDetails(ID, st_email.getText(), st_pno.getText())==1){
+                JOptionPane.showMessageDialog(this,"Your changes have been saved!", "Changes ALert",1);
+                home h=new home(ID);
+                h.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(this,"Something is missing", "Changes ALert",1);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this,"Please fill the details!", "Detail ALert",1);
+                profile p=new profile(ID);
+                p.setVisible(true);
+                dispose();
+        }
+        
         
     }//GEN-LAST:event_saveActionPerformed
 

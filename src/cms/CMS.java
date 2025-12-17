@@ -100,8 +100,62 @@ public ResultSet teacherName(String id){
     }
     return rs;
 }
+public int stdChangePass(String id,String cpass){
+    
+    int status=0;
+    
+    String sql="UPDATE `students` SET `st_pass` = '"+cpass+"' WHERE `students`.`st_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
 
+}
+public int teaChangePass(String id,String cpass){
+    
+    int status=0;
+    
+    String sql="UPDATE `teachers` SET `t_pass` = '"+cpass+"' WHERE `teachers`.`t_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
 
+}
+public int stdChangeDetails(String id,String email,String pno){
+    
+    int status=0;
+    
+    String sql="UPDATE `students` SET `st_email` = '"+email+"', `st_pno` = '"+pno+"' WHERE `students`.`st_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+public int teaChangeDetails(String id,String email,String pno){
+    
+    int status=0;
+    
+    String sql="UPDATE `teachers` SET `t_email` = '"+email+"', `t_pno` = '"+pno+"' WHERE `teachers`.`t_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
     /**
      * @param args the command line arguments
      */

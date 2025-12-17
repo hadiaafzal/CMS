@@ -11,12 +11,17 @@ package cms;
 public class TAbout extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TAbout.class.getName());
-
+    private String ID;
     /**
      * Creates new form TAbout
      */
     public TAbout() {
         initComponents();
+    }
+    public TAbout(String ID) {
+        initComponents();
+        this.ID=ID;
+        
     }
 
     /**
@@ -159,6 +164,7 @@ public class TAbout extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 748, 128));
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(204, 0, 51));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));
@@ -219,7 +225,7 @@ public class TAbout extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        Tprofile p=new Tprofile();
+        Tprofile p=new Tprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed

@@ -181,6 +181,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="t_fname">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="cc" type="rgb"/>
         </Property>
@@ -193,6 +194,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="t_id">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="cc" type="rgb"/>
         </Property>
@@ -322,7 +324,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="t_pno">
       <Properties>
-        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="cc" type="rgb"/>
         </Property>
@@ -373,6 +374,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="t_dept">
       <Properties>
+        <Property name="editable" type="boolean" value="false"/>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="cc" type="rgb"/>
         </Property>
