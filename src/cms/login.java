@@ -75,7 +75,7 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
                 idActionPerformed(evt);
             }
         });
-        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 260, 280, 50));
+        getContentPane().add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 250, 280, 50));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
