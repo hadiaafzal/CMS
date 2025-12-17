@@ -213,10 +213,11 @@ public class TAbout extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
-        // TODO add your handling code here:
-        AdminHome h=new AdminHome();
-        h.setVisible(true);
+        // TODO add your handling code here:HEAD
+        Teahome p=new Teahome(ID);
+        p.setVisible(true);
         dispose();
+        
     }//GEN-LAST:event_homeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

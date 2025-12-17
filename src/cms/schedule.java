@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cms;
-import java.sql.*;
-import java.sql.ResultSet;
 
 /**
  *
@@ -14,38 +12,18 @@ public class schedule extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(schedule.class.getName());
     private String ID;
-        
-
-
-   
-
     /**
      * Creates new form home
      */
     public schedule() {
         initComponents();
     }
-    
-    public schedule(String ID) {
+    public schedule(String name,String ID) {
         initComponents();
-         CMS db=new CMS();
-        stid.setText(ID);
-        ResultSet rs = db.studentName(ID);
         this.ID=ID;
-        
-        try {
-    if (rs.next()) {
-        String fname = rs.getString("st_fname");
-        String lname = rs.getString("st_lname");
-
-        fullname.setText(fname + " " + lname);
+        fullname.setText(name);
+        studentid.setText(ID);
     }
-} catch(Exception e){
-            System.out.println(e);
-        }
-
-    }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,10 +34,9 @@ public class schedule extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -68,24 +45,15 @@ public class schedule extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         home = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        stid = new javax.swing.JTextField();
+        studentid = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Name:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 160, -1, 30));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ST. ID:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 220, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -98,6 +66,11 @@ public class schedule extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 520, 280));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("WEEKLY SCHEDULE");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
         back.setBackground(new java.awt.Color(204, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -193,21 +166,28 @@ public class schedule extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("WEEKLY SCHEDULE CS2A");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 290, 30));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Name:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 70, 40));
 
-        fullname.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 162, 140, 30));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("St. ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 60, 40));
 
-        stid.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        stid.addActionListener(new java.awt.event.ActionListener() {
+        fullname.setEditable(false);
+        fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 140, 40));
+
+        studentid.setEditable(false);
+        studentid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stidActionPerformed(evt);
+                studentidActionPerformed(evt);
             }
         });
-        getContentPane().add(stid, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 220, 140, 30));
+        getContentPane().add(studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 140, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
@@ -243,9 +223,9 @@ public class schedule extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backActionPerformed
 
-    private void stidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stidActionPerformed
+    private void studentidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_stidActionPerformed
+    }//GEN-LAST:event_studentidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,9 +258,9 @@ public class schedule extends javax.swing.JFrame {
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -288,7 +268,6 @@ public class schedule extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton profile;
-    private javax.swing.JTextField stid;
     private javax.swing.JTextField studentid;
     // End of variables declaration//GEN-END:variables
 }
