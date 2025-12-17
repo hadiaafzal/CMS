@@ -139,9 +139,11 @@ public class announcement extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 140, 40));
 
+        studentid.setEditable(false);
         studentid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,6 +163,7 @@ public class announcement extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 0, 102));
         jPanel2.setOpaque(false);
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextArea1.setRows(5);

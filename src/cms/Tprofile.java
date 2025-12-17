@@ -4,6 +4,7 @@
  */
 package cms;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Dell
@@ -168,9 +169,11 @@ try {
         jLabel10.setText("First Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 80, -1));
 
+        t_fname.setEditable(false);
         t_fname.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(t_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
 
+        t_id.setEditable(false);
         t_id.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(t_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
 
@@ -222,7 +225,6 @@ try {
         });
         getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 130, 53));
 
-        t_pno.setEditable(false);
         t_pno.setBackground(new java.awt.Color(204, 255, 255));
         t_pno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,6 +248,7 @@ try {
         jLabel15.setText("Email");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 77, -1));
 
+        t_dept.setEditable(false);
         t_dept.setBackground(new java.awt.Color(204, 255, 255));
         t_dept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -295,9 +298,22 @@ try {
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome(ID);
-        h.setVisible(true);
-        dispose();
+        CMS db=new CMS();
+        if(!t_email.getText().equals("")&&!t_pno.getText().equals("")){
+            if(db.teaChangeDetails(ID, t_email.getText(), t_pno.getText())==1){
+                JOptionPane.showMessageDialog(this,"Your changes have been saved!", "Changes ALert",1);
+                Teahome h=new Teahome(ID);
+                h.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(this,"Something is missing", "Changes ALert",1);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this,"Please fill the details!", "Detail ALert",1);
+                profile p=new profile(ID);
+                p.setVisible(true);
+                dispose();
+        }
         
     }//GEN-LAST:event_saveActionPerformed
 

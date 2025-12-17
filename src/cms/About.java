@@ -162,6 +162,7 @@ public class About extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 470, 748, 128));
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(204, 0, 51));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jTextField1.setForeground(new java.awt.Color(255, 255, 255));

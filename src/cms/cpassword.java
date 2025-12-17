@@ -255,8 +255,10 @@ public class cpassword extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("St. ID:");
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        studentid.setEditable(false);
         studentid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

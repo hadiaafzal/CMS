@@ -25,7 +25,7 @@ public class teaPassword extends javax.swing.JFrame {
     public teaPassword(String name,String ID) {
         initComponents();
         CMS db=new CMS();
-        ResultSet rs = db.studentName(ID);
+        ResultSet rs = db.teacherName(ID);
         this.ID=ID;
         fullname.setText(name);
         teacherid.setText(ID);
@@ -257,8 +257,10 @@ public class teaPassword extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("T. ID:");
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
+        teacherid.setEditable(false);
         teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         teacherid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -395,7 +397,7 @@ TAbout a=new TAbout(ID);
         if(enterPass.getText().equals(realPass)){
             
             if((newPass.getText().equals(confirmNewPass.getText()))&&!newPass.getText().equals("")){
-                if(db.stdChangePass(ID, newPass.getText())==1){
+                if(db.teaChangePass(ID, newPass.getText())==1){
                     JOptionPane.showMessageDialog(this,"Your Password has been changed","Password alert",1);
                     Teahome h=new Teahome(ID);
                     h.setVisible(true);

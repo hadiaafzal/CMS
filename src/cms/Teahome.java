@@ -227,9 +227,11 @@ try {
         jLabel6.setText("T. ID:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
 
+        teacherid.setEditable(false);
         teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         teacherid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

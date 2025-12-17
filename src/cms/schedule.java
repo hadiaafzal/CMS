@@ -176,9 +176,11 @@ public class schedule extends javax.swing.JFrame {
         jLabel6.setText("St. ID:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 200, 60, 40));
 
+        fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 150, 140, 40));
 
+        studentid.setEditable(false);
         studentid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         studentid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

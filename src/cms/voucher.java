@@ -151,6 +151,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setText("NAME:");
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField1.setText("Anas Khatri");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -168,6 +169,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Student ID:");
 
+        jTextField2.setEditable(false);
         jTextField2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField2.setText("CSC-25S-004");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +178,7 @@ public class voucher extends javax.swing.JFrame {
             }
         });
 
+        jTextField4.setEditable(false);
         jTextField4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField4.setText("4000");
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -187,6 +190,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Rs/Credit hour:");
 
+        jTextField3.setEditable(false);
         jTextField3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField3.setText("5");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -198,6 +202,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("No of courses:");
 
+        jTextField5.setEditable(false);
         jTextField5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField5.setText("4500");
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -212,6 +217,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setText("Exam Fees:");
 
+        jTextField6.setEditable(false);
         jTextField6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jTextField6.setText("6100");
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -223,6 +229,7 @@ public class voucher extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel14.setText("Total Fees:");
 
+        jTextField7.setEditable(false);
         jTextField7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jTextField7.setText("71500");
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
