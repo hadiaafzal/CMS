@@ -31,6 +31,9 @@ public class StdApp extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        reject = new javax.swing.JButton();
+        approve = new javax.swing.JButton();
+        back = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -38,16 +41,51 @@ public class StdApp extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         home = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
         teacherid = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        application = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        reject.setBackground(new java.awt.Color(255, 51, 51));
+        reject.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        reject.setForeground(new java.awt.Color(255, 255, 255));
+        reject.setText("REJECT");
+        reject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejectActionPerformed(evt);
+            }
+        });
+        getContentPane().add(reject, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 120, 50));
+
+        approve.setBackground(new java.awt.Color(51, 51, 255));
+        approve.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        approve.setForeground(new java.awt.Color(255, 255, 255));
+        approve.setText("APPROVE");
+        approve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                approveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(approve, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 120, 50));
+
+        back.setBackground(new java.awt.Color(204, 255, 255));
+        back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 0, 0));
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 90, 40));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setForeground(new java.awt.Color(102, 102, 102));
@@ -132,17 +170,6 @@ public class StdApp extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
-        logout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setText("LOGOUT");
-        logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Name:");
@@ -150,7 +177,7 @@ public class StdApp extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("T. ID:");
+        jLabel6.setText("A. ID:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
 
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -164,18 +191,43 @@ public class StdApp extends javax.swing.JFrame {
         });
         getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
 
+        application.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "CheckBox", "St ID", "First Name", "Last Name", "Department", "Email"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Boolean.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(application);
+        if (application.getColumnModel().getColumnCount() > 0) {
+            application.getColumnModel().getColumn(0).setPreferredWidth(30);
+            application.getColumnModel().getColumn(5).setPreferredWidth(70);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 640, 290));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("STUDENT APPLICATIONS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, 440, 70));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-               login l=new login();
-        l.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_logoutActionPerformed
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
@@ -202,6 +254,21 @@ public class StdApp extends javax.swing.JFrame {
     private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_teacheridActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        AdminHome h=new AdminHome(ID);
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
+    private void approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_approveActionPerformed
+
+    private void rejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rejectActionPerformed
 
     /**
      * @param args the command line arguments
@@ -230,17 +297,22 @@ public class StdApp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
+    private javax.swing.JTable application;
+    private javax.swing.JButton approve;
+    private javax.swing.JButton back;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton logout;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton profile;
+    private javax.swing.JButton reject;
     private javax.swing.JTextField teacherid;
     // End of variables declaration//GEN-END:variables
 }
