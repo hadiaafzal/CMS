@@ -391,7 +391,7 @@ public class cpassword extends javax.swing.JFrame {
         if(enterPass.getText().equals(realPass)){
             
             if((newPass.getText().equals(confirmNewPass.getText()))&&!newPass.getText().equals("")){
-                if(db.changePass(ID, newPass.getText())==1){
+                if(db.stdChangePass(ID, newPass.getText())==1){
                     JOptionPane.showMessageDialog(this,"Your Password has been changed","Password alert",1);
                     home h=new home(ID);
                     h.setVisible(true);
@@ -402,7 +402,7 @@ public class cpassword extends javax.swing.JFrame {
                 }
             
             }else{
-                    JOptionPane.showMessageDialog(this,"Please Enter the matching details","Passwrod alert",1);
+                    JOptionPane.showMessageDialog(this,"Please Enter the matching Details","Passwrod alert",1);
                 }
         
         }else{

@@ -100,11 +100,25 @@ public ResultSet teacherName(String id){
     }
     return rs;
 }
-public int changePass(String id,String cpass){
+public int stdChangePass(String id,String cpass){
     
     int status=0;
     
     String sql="UPDATE `students` SET `st_pass` = '"+cpass+"' WHERE `students`.`st_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+public int teaChangePass(String id,String cpass){
+    
+    int status=0;
+    
+    String sql="UPDATE `teachers` SET `t_pass` = '"+cpass+"' WHERE `teachers`.`t_id` = '"+id+"'";
     try{
     st.executeUpdate(sql);
     status =1;

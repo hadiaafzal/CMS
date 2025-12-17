@@ -4,6 +4,9 @@
  */
 package cms;
 
+import java.sql.*;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell
@@ -12,6 +15,7 @@ public class teaPassword extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(teaPassword.class.getName());
     private String ID;
+    private String realPass;
     /**
      * Creates new form home
      */
@@ -20,9 +24,21 @@ public class teaPassword extends javax.swing.JFrame {
     }
     public teaPassword(String name,String ID) {
         initComponents();
+        CMS db=new CMS();
+        ResultSet rs = db.studentName(ID);
         this.ID=ID;
         fullname.setText(name);
         teacherid.setText(ID);
+        
+        try {
+    if (rs.next()) {
+        String realPass = rs.getString("t_pass");
+        this.realPass=realPass;
+        
+    }
+} catch(Exception e){
+            System.out.println(e);
+        }
     }
 
     /**
@@ -44,10 +60,10 @@ public class teaPassword extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        enterPass = new javax.swing.JPasswordField();
         jLabel12 = new javax.swing.JLabel();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jPasswordField3 = new javax.swing.JPasswordField();
+        newPass = new javax.swing.JPasswordField();
+        confirmNewPass = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         cancel = new javax.swing.JButton();
@@ -153,24 +169,24 @@ public class teaPassword extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel1.setText("-----> Current Password");
 
-        jPasswordField1.setBackground(new java.awt.Color(204, 255, 204));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        enterPass.setBackground(new java.awt.Color(204, 255, 204));
+        enterPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                enterPassActionPerformed(evt);
             }
         });
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel12.setText("-----> New Password");
 
-        jPasswordField2.setBackground(new java.awt.Color(204, 255, 204));
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        newPass.setBackground(new java.awt.Color(204, 255, 204));
+        newPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                newPassActionPerformed(evt);
             }
         });
 
-        jPasswordField3.setBackground(new java.awt.Color(204, 255, 204));
+        confirmNewPass.setBackground(new java.awt.Color(204, 255, 204));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel13.setText("-----> Confirm Password");
@@ -262,12 +278,12 @@ public class teaPassword extends javax.swing.JFrame {
                                 .addContainerGap()
                                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addGap(145, 145, 145)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(enterPass, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addContainerGap()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -276,7 +292,7 @@ public class teaPassword extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(18, 18, 18)
-                                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(confirmNewPass, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel2Layout.createSequentialGroup()
                                     .addGap(70, 70, 70)
                                     .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
@@ -315,14 +331,14 @@ public class teaPassword extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(enterPass, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(newPass, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(confirmNewPass, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,13 +374,13 @@ TAbout a=new TAbout(ID);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void enterPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_enterPassActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void newPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newPassActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_newPassActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
@@ -375,9 +391,28 @@ TAbout a=new TAbout(ID);
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-        Teahome h=new Teahome(ID);
-        h.setVisible(true);
-        dispose();
+        CMS db=new CMS();
+        if(enterPass.getText().equals(realPass)){
+            
+            if((newPass.getText().equals(confirmNewPass.getText()))&&!newPass.getText().equals("")){
+                if(db.stdChangePass(ID, newPass.getText())==1){
+                    JOptionPane.showMessageDialog(this,"Your Password has been changed","Password alert",1);
+                    Teahome h=new Teahome(ID);
+                    h.setVisible(true);
+                    dispose();
+                }
+                else{
+                    JOptionPane.showMessageDialog(this,"Password Error","Passwrod alert",1);
+                }
+            
+            }else{
+                    JOptionPane.showMessageDialog(this,"Please Enter the matching Details","Passwrod alert",1);
+                }
+        
+        }else{
+            JOptionPane.showMessageDialog(this,"Please Enter the correct Password!","Password Alert",1);
+        }
+        
     }//GEN-LAST:event_confirmActionPerformed
 
     private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
@@ -413,6 +448,8 @@ TAbout a=new TAbout(ID);
     private javax.swing.JButton about;
     private javax.swing.JButton cancel;
     private javax.swing.JButton confirm;
+    private javax.swing.JPasswordField confirmNewPass;
+    private javax.swing.JPasswordField enterPass;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
@@ -428,9 +465,7 @@ TAbout a=new TAbout(ID);
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
+    private javax.swing.JPasswordField newPass;
     private javax.swing.JButton profile;
     private javax.swing.JTextField teacherid;
     // End of variables declaration//GEN-END:variables
