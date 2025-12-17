@@ -265,7 +265,7 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
         // Show the password
         pass.setEchoChar((char) 0); // Setting echo char to 0 reveals the text
         // Change icon to 'hide password' eye icon
-        visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/modifiedshowpass.png"))); 
+        visibilty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/hidepass.png"))); 
         passwordVisible=true;
         }
 

@@ -135,7 +135,7 @@ public class AAbout extends javax.swing.JFrame {
         jLabel1.setBackground(new java.awt.Color(102, 0, 102));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel1.setText("ABOUT THIS CMS");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 162, -1, 56));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 160, -1, 56));
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(204, 255, 255));

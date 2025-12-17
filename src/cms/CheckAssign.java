@@ -162,7 +162,7 @@ public class CheckAssign extends javax.swing.JFrame {
                 teacheridActionPerformed(evt);
             }
         });
-        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
+        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, 170, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
