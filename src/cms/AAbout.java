@@ -8,14 +8,14 @@ package cms;
  *
  * @author Dell
  */
-public class TAbout extends javax.swing.JFrame {
+public class AAbout extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TAbout.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AAbout.class.getName());
 
     /**
-     * Creates new form TAbout
+     * Creates new form AAbout
      */
-    public TAbout() {
+    public AAbout() {
         initComponents();
     }
 
@@ -219,7 +219,7 @@ public class TAbout extends javax.swing.JFrame {
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        Tprofile p=new Tprofile();
+        Aprofile p=new Aprofile();
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
@@ -262,7 +262,7 @@ public class TAbout extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TAbout().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new AAbout().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
