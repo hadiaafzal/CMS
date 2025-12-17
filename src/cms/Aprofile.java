@@ -21,21 +21,19 @@ public class Aprofile extends javax.swing.JFrame {
     public Aprofile(String ID) {
         initComponents();
         CMS db=new CMS();
-        ResultSet rs = db.teacherName(ID);
+        ResultSet ars = db.AdminName(ID);
         this.ID=ID;
 try {
-    if (rs.next()) {
-        String fname = rs.getString("t_fname");
-        String lname = rs.getString("t_lname");
-        String dept = rs.getString("t_dept");
-        String email = rs.getString("t_email");
-        String pno = rs.getString("t_pno");
-        t_fname.setText(fname);
-        t_lname.setText(lname);
-        t_id.setText(ID);
-        t_dept.setText(dept);
-        t_email.setText(email);
-        t_pno.setText(pno);
+    if (ars.next()) {
+        String fname = ars.getString("a_fname");
+        String lname = ars.getString("a_lname");
+        String email = ars.getString("a_email");
+        String pno = ars.getString("a_pno");
+        a_fname.setText(fname);
+        a_lname.setText(lname);
+        a_id.setText(ID);
+        a_email.setText(email);
+        a_pno.setText(pno);
     }
 } catch(Exception e){
             System.out.println(e);
@@ -61,19 +59,17 @@ try {
         about = new javax.swing.JButton();
         home = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        t_fname = new javax.swing.JTextField();
-        t_id = new javax.swing.JTextField();
+        a_fname = new javax.swing.JTextField();
+        a_id = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        t_lname = new javax.swing.JTextField();
-        t_email = new javax.swing.JTextField();
-        jLabel13 = new javax.swing.JLabel();
+        a_lname = new javax.swing.JTextField();
+        a_email = new javax.swing.JTextField();
         save = new javax.swing.JButton();
-        t_pno = new javax.swing.JTextField();
+        a_pno = new javax.swing.JTextField();
         cancel = new javax.swing.JButton();
         jLabel15 = new javax.swing.JLabel();
-        t_dept = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -168,11 +164,11 @@ try {
         jLabel10.setText("First Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 80, -1));
 
-        t_fname.setBackground(new java.awt.Color(204, 255, 255));
-        getContentPane().add(t_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
+        a_fname.setBackground(new java.awt.Color(204, 255, 255));
+        getContentPane().add(a_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
 
-        t_id.setBackground(new java.awt.Color(204, 255, 255));
-        getContentPane().add(t_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
+        a_id.setBackground(new java.awt.Color(204, 255, 255));
+        getContentPane().add(a_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -182,7 +178,7 @@ try {
         jLabel9.setBackground(new java.awt.Color(204, 255, 204));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 255, 204));
-        jLabel9.setText("ACOUNT INFO");
+        jLabel9.setText("ADMIN  INFO");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 267, 64));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -190,27 +186,22 @@ try {
         jLabel11.setText("Last Name:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 290, 77, -1));
 
-        t_lname.setEditable(false);
-        t_lname.setBackground(new java.awt.Color(204, 255, 255));
-        t_lname.addActionListener(new java.awt.event.ActionListener() {
+        a_lname.setEditable(false);
+        a_lname.setBackground(new java.awt.Color(204, 255, 255));
+        a_lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_lnameActionPerformed(evt);
+                a_lnameActionPerformed(evt);
             }
         });
-        getContentPane().add(t_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 170, 33));
+        getContentPane().add(a_lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 320, 170, 33));
 
-        t_email.setBackground(new java.awt.Color(204, 255, 255));
-        t_email.addActionListener(new java.awt.event.ActionListener() {
+        a_email.setBackground(new java.awt.Color(204, 255, 255));
+        a_email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_emailActionPerformed(evt);
+                a_emailActionPerformed(evt);
             }
         });
-        getContentPane().add(t_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 160, 33));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Department:");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 87, -1));
+        getContentPane().add(a_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 160, 33));
 
         save.setBackground(new java.awt.Color(204, 255, 204));
         save.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -222,14 +213,14 @@ try {
         });
         getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 130, 53));
 
-        t_pno.setEditable(false);
-        t_pno.setBackground(new java.awt.Color(204, 255, 255));
-        t_pno.addActionListener(new java.awt.event.ActionListener() {
+        a_pno.setEditable(false);
+        a_pno.setBackground(new java.awt.Color(204, 255, 255));
+        a_pno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_pnoActionPerformed(evt);
+                a_pnoActionPerformed(evt);
             }
         });
-        getContentPane().add(t_pno, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 500, 172, 33));
+        getContentPane().add(a_pno, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
 
         cancel.setBackground(new java.awt.Color(204, 255, 204));
         cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -246,18 +237,10 @@ try {
         jLabel15.setText("Email");
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 470, 77, -1));
 
-        t_dept.setBackground(new java.awt.Color(204, 255, 255));
-        t_dept.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t_deptActionPerformed(evt);
-            }
-        });
-        getContentPane().add(t_dept, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 410, 172, 33));
-
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Phone No:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 470, 77, 20));
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, 77, 20));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/spro.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 910, 570));
@@ -301,21 +284,17 @@ try {
         
     }//GEN-LAST:event_saveActionPerformed
 
-    private void t_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_emailActionPerformed
+    private void a_emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t_emailActionPerformed
+    }//GEN-LAST:event_a_emailActionPerformed
 
-    private void t_lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_lnameActionPerformed
+    private void a_lnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_lnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t_lnameActionPerformed
+    }//GEN-LAST:event_a_lnameActionPerformed
 
-    private void t_deptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_deptActionPerformed
+    private void a_pnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_pnoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_t_deptActionPerformed
-
-    private void t_pnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t_pnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t_pnoActionPerformed
+    }//GEN-LAST:event_a_pnoActionPerformed
     
     /**
      * @param args the command line arguments
@@ -343,13 +322,17 @@ try {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField a_email;
+    private javax.swing.JTextField a_fname;
+    private javax.swing.JTextField a_id;
+    private javax.swing.JTextField a_lname;
+    private javax.swing.JTextField a_pno;
     private javax.swing.JButton about;
     private javax.swing.JButton cancel;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel19;
@@ -360,11 +343,5 @@ try {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton profile;
     private javax.swing.JButton save;
-    private javax.swing.JTextField t_dept;
-    private javax.swing.JTextField t_email;
-    private javax.swing.JTextField t_fname;
-    private javax.swing.JTextField t_id;
-    private javax.swing.JTextField t_lname;
-    private javax.swing.JTextField t_pno;
     // End of variables declaration//GEN-END:variables
 }
