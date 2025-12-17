@@ -186,11 +186,14 @@ public class CheckAssign extends javax.swing.JFrame {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
+         AdminHome p=new AdminHome(ID);
+        p.setVisible(true);
+        dispose();
     }//GEN-LAST:event_homeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        TAbout a=new TAbout();
+        AAbout a=new AAbout();
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
