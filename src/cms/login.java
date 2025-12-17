@@ -189,6 +189,7 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
         CMS db=new CMS();
         ResultSet rs;
         ResultSet trs;
+        ResultSet ars;
 
         String ID=id.getText();
 
@@ -202,6 +203,21 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
                 dispose();
                 return;
             }
+            
+            
+            ars=db.adminDetails(id.getText(), pass.getText());
+            
+            
+            if(ars.next()){
+                //match selection
+
+                AdminHome th=new AdminHome(ID);
+                th.setVisible(true);
+                dispose();
+                return;
+            }
+
+            
 
             trs=db.teacherDetails(id.getText(), pass.getText());
 

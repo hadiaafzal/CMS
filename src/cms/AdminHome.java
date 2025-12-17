@@ -13,18 +13,35 @@ public class AdminHome extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminHome.class.getName());
     private String ID;
+    private String FullName;
+    
     /**
      * Creates new form AdminHome
      */
     public AdminHome() {
         initComponents();
     }
-    public AdminHome(String ID) {
+  public AdminHome(String ID) {
         initComponents();
         CMS db=new CMS();
         adminid.setText(ID);
-        ResultSet rs = db.teacherName(ID);
-        this.ID=ID;}
+        ResultSet ars = db.AdminName(ID);
+        this.ID=ID;
+        
+
+try {
+    if (ars.next()) {
+        String fname = ars.getString("a_fname");
+        String lname = ars.getString("a_lname");
+
+        fullname.setText(fname + " " + lname);
+    }
+} catch(Exception e){
+            System.out.println(e);
+        }
+        this.FullName=fullname.getText();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

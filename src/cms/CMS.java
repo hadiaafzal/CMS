@@ -80,9 +80,36 @@ public ResultSet teacherDetails(String id, String pass){
     }
     return rs;
 }
+/**/
+public ResultSet adminDetails(String id, String pass){
+
+    String sql="select*from admins where a_id='"+id+"' AND a_pass='"+pass+"'";
+    try{
+
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
+
+
+
 public ResultSet studentName(String id){
 
     String sql="select *from students where st_id='"+id+"'";
+    try{
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
+
+                    /**/
+public ResultSet AdminName(String id){
+
+    String sql="select *from admins where a_id='"+id+"'";
     try{
     rs=st.executeQuery(sql);
     }catch(Exception e){
@@ -114,6 +141,25 @@ public int stdChangePass(String id,String cpass){
     return status;
 
 }
+                  /**/
+public int AdPass(String id,String cpass){
+    
+    int status=0;
+    
+    String sql="UPDATE `admins` SET `a_pass` = '"+cpass+"' WHERE `students`.`st_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+
+
+
+
 public int teaChangePass(String id,String cpass){
     
     int status=0;
