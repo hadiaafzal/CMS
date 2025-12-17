@@ -4,6 +4,8 @@
  */
 package cms;
 import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -19,7 +21,24 @@ public class StdApp extends javax.swing.JFrame {
     public StdApp() {
         initComponents();
     }
-    
+    public StdApp(String name,String ID) {
+        initComponents();
+        this.ID=ID;
+        fullname.setText(name);
+        teacherid.setText(ID);
+        CMS db = new CMS();
+        ResultSet rs;
+        rs = db.studentAppDetails();
+        DefaultTableModel tb = (DefaultTableModel) application.getModel();
+        try {
+            while (rs.next()) {
+                Object studentApp[] = {false,rs.getString("st_id"), rs.getString("st_fname"), rs.getString("st_lname"), rs.getString("st_dept"), rs.getString("st_email")};
+                tb.addRow(studentApp);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
 
     /**
@@ -193,10 +212,7 @@ public class StdApp extends javax.swing.JFrame {
 
         application.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "CheckBox", "St ID", "First Name", "Last Name", "Department", "Email"

@@ -324,9 +324,9 @@ public class create extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"register Error","register alert",1);
         }
         else{
-        if(db.rstudents(st_id.getText(),st_fname.getText(),st_lname.getText(),
+        if(db.studentsApp(st_id.getText(),st_fname.getText(),st_lname.getText(),
                 st_email.getText(),st_pno.getText(),sconpass.getText(),st_dept.getSelectedItem().toString())==1){
-        JOptionPane.showMessageDialog(this,"register Success","register alert",1);
+        JOptionPane.showMessageDialog(this,"Your Application has been forwarded","register alert",1);
         
         login l=new login();
         l.setVisible(true);

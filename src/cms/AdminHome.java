@@ -302,7 +302,7 @@ try {
 
     private void sappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sappActionPerformed
         // TODO add your handling code here:
-                StdApp tcp=new StdApp();
+                StdApp tcp=new StdApp(FullName,ID);
         tcp.setVisible(true);
         dispose();
         

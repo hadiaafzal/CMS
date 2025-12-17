@@ -31,6 +31,30 @@ System.out.println("Db is connected");
     System.out.println(e);
 }
 }
+public int studentsApp(String id, String fname, String lname, String email, String pno, String pass, String dept){
+    
+    int status=0;
+    
+    String sql="INSERT INTO `studentsapplications` (`st_id`, `st_fname`, `st_lname`, `st_email`, `st_pno`, `st_pass`, `st_dept`)VALUES ('"+id+"','"+fname+"','"+lname+"','"+email+"','"+pno+"','"+pass+"','"+dept+"')";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+public ResultSet studentAppDetails(){
+
+    String sql="select*from studentsapplications";
+    try{
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
 public int rstudents(String id, String fname, String lname, String email, String pno, String pass, String dept){
     
     int status=0;
