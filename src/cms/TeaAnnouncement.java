@@ -152,7 +152,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 130));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 840, 130));
 
         cancel.setBackground(new java.awt.Color(204, 255, 255));
         cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -179,10 +179,11 @@ public class TeaAnnouncement extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 0, 0));
         jLabel2.setText("Upload ANNOUNCEMENT");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
 
         announcement.setColumns(20);
         announcement.setRows(5);
+        announcement.setBorder(javax.swing.BorderFactory.createMatteBorder(6, 4, 6, 4, new java.awt.Color(0, 0, 0)));
         jScrollPane2.setViewportView(announcement);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 510, 270));

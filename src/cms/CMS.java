@@ -12,7 +12,7 @@ import java.sql.*;
  * @author Dell
  */
 public class CMS {
-    Connection con;
+  Connection con;
 Statement st;
 ResultSet rs;
 
@@ -257,11 +257,25 @@ public int teaChangePass(String id,String cpass){
     return status;
 
 }
+
+
+public ResultSet announcement(String id){
+    
+String sql = "SELECT `announcement` from `announcements` WHERE `announcements`.`t_id` = '"+id+"'";  
+try{
+
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
+                       /**/
 public int makeAnnouncement(String id,String announcement){
  int status=0;
     
-    String sql="UPDATE `announcements` SET `announcement` = '"+announcement+"' WHERE `announcements`.`t_id` = '"+id+"'";
-    try{
+String sql = "INSERT INTO `announcements` (`t_id`, `announcement`) VALUES ('" + id + "', '" + announcement + "')";  
+try{
     st.executeUpdate(sql);
     status =1;
     }catch(Exception e){

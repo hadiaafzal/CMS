@@ -43,6 +43,9 @@ public class modiAnnounce extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
         teacherid = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        announcement = new javax.swing.JTextArea();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,6 +167,19 @@ public class modiAnnounce extends javax.swing.JFrame {
         });
         getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
 
+        announcement.setColumns(20);
+        announcement.setRows(5);
+        announcement.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.black, java.awt.Color.black), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
+        jScrollPane2.setViewportView(announcement);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 510, 270));
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("MODIFY ANNOUNCEMENTS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
@@ -229,15 +245,18 @@ public class modiAnnounce extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
+    private javax.swing.JTextArea announcement;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton logout;
     private javax.swing.JButton profile;
     private javax.swing.JTextField teacherid;

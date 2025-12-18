@@ -4,6 +4,7 @@
  */
 package cms;
 
+import java.sql.*;
 /**
  *
  * @author Dell
@@ -23,6 +24,20 @@ public class announcement extends javax.swing.JFrame {
         this.ID=ID;
         fullname.setText(name);
         studentid.setText(ID);
+        
+        CMS db = new CMS();
+        ResultSet rs= db.announcement(ID);
+        try {
+            while (rs.next()) {
+                String ANNOUNCEMENT=rs.getString("announcement");
+                seeannounce.setText(ANNOUNCEMENT);
+                }
+            
+        } 
+        catch (Exception e) {
+            System.out.println("ERROR" + e);
+        }
+  
     }
 
     /**
@@ -45,11 +60,10 @@ public class announcement extends javax.swing.JFrame {
         studentid = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         seeannounce = new javax.swing.JTextArea();
-        jLabel6 = new javax.swing.JLabel();
-        back = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        cancel = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -160,58 +174,30 @@ public class announcement extends javax.swing.JFrame {
         jLabel10.setText("Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, 70, 40));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 102));
-        jPanel2.setOpaque(false);
-
         seeannounce.setEditable(false);
         seeannounce.setColumns(20);
         seeannounce.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         seeannounce.setRows(5);
+        seeannounce.setBorder(javax.swing.BorderFactory.createTitledBorder("ANNOUNCEMENTS"));
         jScrollPane2.setViewportView(seeannounce);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        jLabel6.setText("ANNOUNCEMENT");
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 526, 257));
 
-        back.setBackground(new java.awt.Color(204, 255, 255));
-        back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        back.setForeground(new java.awt.Color(255, 0, 0));
-        back.setText("BACK");
-        back.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("ANNOUNCEMENTS");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 250, -1, -1));
+
+        cancel.setBackground(new java.awt.Color(204, 255, 255));
+        cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 0, 0));
+        cancel.setText("CANCEL");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backActionPerformed(evt);
+                cancelActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(114, 114, 114)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 526, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(202, 202, 202)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(102, 102, 102)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 450));
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 540, 130, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
@@ -240,16 +226,16 @@ public class announcement extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        // TODO add your handling code here:
-        home h=new home(ID);
-        h.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_backActionPerformed
-
     private void studentidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_studentidActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_studentidActionPerformed
+
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // TODO add your handling code here:
+        Teahome h=new Teahome(ID);
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_cancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -278,18 +264,17 @@ public class announcement extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
-    private javax.swing.JButton back;
+    private javax.swing.JButton cancel;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton profile;
     private javax.swing.JTextArea seeannounce;
