@@ -262,6 +262,7 @@ try {
 
     private void teaannouncementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaannouncementActionPerformed
         // TODO add your handling code here:
+        
                 TeaAnnouncement ta=new TeaAnnouncement(FullName,ID);
         ta.setVisible(true);
         dispose();

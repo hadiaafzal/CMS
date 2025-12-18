@@ -4,6 +4,9 @@
  */
 package cms;
 
+import javax.swing.JOptionPane;
+import java.sql.*;
+
 /**
  *
  * @author Dell
@@ -14,12 +17,27 @@ public class TeaAnnouncement extends javax.swing.JFrame {
     private String ID;
     public TeaAnnouncement() {
         initComponents();
+        
+        // Inside your JFrame class
+
     }
     public TeaAnnouncement(String name,String ID) {
         initComponents();
         this.ID=ID;
         fullname.setText(name);
         teacherid.setText(ID);
+        
+        
+        
+        if (ID == null || ID.trim().isEmpty()) {
+        confirm.setEnabled(false); 
+        announcement.setEditable(false); 
+        announcement.setText("Please log in as a teacher to make an announcement.");
+        
+        
+        JOptionPane.showMessageDialog(this, "No teacher logged in!", "Access Denied", JOptionPane.ERROR_MESSAGE);
+    }
+        
     }
 
     /**
@@ -42,7 +60,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
         confirm = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        announcement = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
@@ -163,9 +181,9 @@ public class TeaAnnouncement extends javax.swing.JFrame {
         jLabel2.setText("Upload ANNOUNCEMENT");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        announcement.setColumns(20);
+        announcement.setRows(5);
+        jScrollPane2.setViewportView(announcement);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 510, 270));
 
@@ -226,9 +244,21 @@ Tprofile p=new Tprofile(ID);
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-                Teahome h=new Teahome(ID);
-        h.setVisible(true);
-        dispose();
+       CMS db=new CMS();
+               // String text=announcement.getText().trim();
+                        if (!announcement.getText().equals("")){
+                             if(db.makeAnnouncement(ID,announcement.getText())==1){
+                            JOptionPane.showMessageDialog(this,"YOUR announcement has been made","Announcement", 1);                     
+                            Teahome h=new Teahome(ID);
+                            h.setVisible(true);
+                            dispose();
+                            }
+                        }  
+    
+                        else{
+                         
+                            JOptionPane.showMessageDialog(this,"Announcement alert","Announcement Empty", 1);
+                        }
     }//GEN-LAST:event_confirmActionPerformed
 
     private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
@@ -262,6 +292,7 @@ Tprofile p=new Tprofile(ID);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
+    private javax.swing.JTextArea announcement;
     private javax.swing.JButton cancel;
     private javax.swing.JButton confirm;
     private javax.swing.JTextField fullname;
@@ -274,7 +305,6 @@ Tprofile p=new Tprofile(ID);
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton profile;
     private javax.swing.JTextField teacherid;
     private javax.swing.JButton thome;

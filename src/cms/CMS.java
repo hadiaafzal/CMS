@@ -257,6 +257,21 @@ public int teaChangePass(String id,String cpass){
     return status;
 
 }
+public int makeAnnouncement(String id,String announcement){
+ int status=0;
+    
+    String sql="UPDATE `announcements` SET `announcement` = '"+announcement+"' WHERE `announcements`.`t_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+}
+
+
+
 public int stdChangeDetails(String id,String email,String pno){
     
     int status=0;

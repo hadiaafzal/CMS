@@ -47,7 +47,7 @@ public class announcement extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        seeannounce = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -163,11 +163,11 @@ public class announcement extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 0, 102));
         jPanel2.setOpaque(false);
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        seeannounce.setEditable(false);
+        seeannounce.setColumns(20);
+        seeannounce.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        seeannounce.setRows(5);
+        jScrollPane2.setViewportView(seeannounce);
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel6.setText("ANNOUNCEMENT");
@@ -291,8 +291,8 @@ public class announcement extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton profile;
+    private javax.swing.JTextArea seeannounce;
     private javax.swing.JTextField studentid;
     // End of variables declaration//GEN-END:variables
 }
