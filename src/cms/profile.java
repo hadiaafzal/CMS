@@ -197,7 +197,7 @@ try {
         jLabel9.setBackground(new java.awt.Color(204, 255, 204));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 255, 204));
-        jLabel9.setText("ACOUNT INFO");
+        jLabel9.setText("STUDENT INFO");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 230, 267, 64));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N

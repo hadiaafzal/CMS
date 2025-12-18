@@ -34,8 +34,8 @@ public class schedule extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
         back = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
@@ -49,26 +49,16 @@ public class schedule extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
         studentid = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        jTable1 = new javax.swing.JTable();
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Day", "Subject", "Instructor", "Class.No", "Time"
-            }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 520, 280));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("WEEKLY SCHEDULE");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
 
@@ -189,8 +179,15 @@ public class schedule extends javax.swing.JFrame {
         });
         getContentPane().add(studentid, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 200, 140, 40));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/darkcms.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 910, 550));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Day", "Subject", "Instructor", "Class.No", "Time"
+            }
+        ));
+        getContentPane().add(jTable1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
