@@ -31,6 +31,23 @@ System.out.println("Db is connected");
     System.out.println(e);
 }
 }
+//INSERT INTO studentsapplications SELECT * FROM students;
+public int studentsAppPass(String id){
+    
+    int status=0;
+    
+    String sql1="INSERT INTO students SELECT * FROM studentsapplications where st_id='"+id+"' ;";
+    String sql2="DELETE FROM studentsapplications where st_id='"+id+"'";
+    try{
+    st.executeUpdate(sql1);
+    st.executeUpdate(sql2);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
 public int studentsApp(String id, String fname, String lname, String email, String pno, String pass, String dept){
     
     int status=0;

@@ -70,7 +70,7 @@ public class schedule extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("WEEKLY SCHEDULE");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, -1));
 
         back.setBackground(new java.awt.Color(204, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
