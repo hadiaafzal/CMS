@@ -68,6 +68,8 @@ public class subjectAssign extends javax.swing.JFrame {
         time = new javax.swing.JComboBox<>();
         day = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
+        cancel = new javax.swing.JButton();
+        confirm = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -131,7 +133,7 @@ public class subjectAssign extends javax.swing.JFrame {
                 .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +154,7 @@ public class subjectAssign extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
@@ -207,6 +209,28 @@ public class subjectAssign extends javax.swing.JFrame {
         jLabel2.setText("ASSIGN  TEACHER");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 430, 80));
 
+        cancel.setBackground(new java.awt.Color(204, 204, 204));
+        cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        cancel.setForeground(new java.awt.Color(255, 0, 0));
+        cancel.setText("CANCEL");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 480, 130, 50));
+
+        confirm.setBackground(new java.awt.Color(204, 204, 204));
+        confirm.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        confirm.setForeground(new java.awt.Color(255, 0, 0));
+        confirm.setText("CONFIRM");
+        confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmActionPerformed(evt);
+            }
+        });
+        getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, 130, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
@@ -238,6 +262,20 @@ public class subjectAssign extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adminidActionPerformed
 
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
+        // TODO add your handling code here:
+        AdminHome h=new AdminHome(ID);
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_cancelActionPerformed
+
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+        // TODO add your handling code here:
+        AdminHome h=new AdminHome(ID);
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_confirmActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -266,6 +304,8 @@ public class subjectAssign extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
     private javax.swing.JTextField adminid;
+    private javax.swing.JButton cancel;
+    private javax.swing.JButton confirm;
     private javax.swing.JComboBox<String> day;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;

@@ -164,7 +164,7 @@ try {
                 scheduleActionPerformed(evt);
             }
         });
-        getContentPane().add(schedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 233, 59));
+        getContentPane().add(schedule, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 270, 59));
 
         upload.setBackground(new java.awt.Color(204, 204, 204));
         upload.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -174,7 +174,7 @@ try {
                 uploadActionPerformed(evt);
             }
         });
-        getContentPane().add(upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 230, 59));
+        getContentPane().add(upload, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 270, 59));
 
         attendence.setBackground(new java.awt.Color(204, 204, 204));
         attendence.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -184,7 +184,7 @@ try {
                 attendenceActionPerformed(evt);
             }
         });
-        getContentPane().add(attendence, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 230, 59));
+        getContentPane().add(attendence, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, 59));
 
         tcpassword.setBackground(new java.awt.Color(204, 204, 204));
         tcpassword.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
@@ -194,7 +194,7 @@ try {
                 tcpasswordActionPerformed(evt);
             }
         });
-        getContentPane().add(tcpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 230, 59));
+        getContentPane().add(tcpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 270, 59));
 
         logout.setBackground(new java.awt.Color(255, 0, 51));
         logout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -215,7 +215,7 @@ try {
                 teaannouncementActionPerformed(evt);
             }
         });
-        getContentPane().add(teaannouncement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 233, 60));
+        getContentPane().add(teaannouncement, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 270, 60));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
