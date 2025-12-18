@@ -312,7 +312,7 @@ try {
 
     private void tappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tappActionPerformed
         // TODO add your handling code here:
-                      teaPendingApp a=new teaPendingApp();
+                      teaPendingApp a=new teaPendingApp(FullName,ID);
         a.setVisible(true);
         dispose();  
 

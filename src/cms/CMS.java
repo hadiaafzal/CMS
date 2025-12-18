@@ -48,6 +48,51 @@ public int studentsAppPass(String id){
     return status;
 
 }
+public int studentsAppReject(String id){
+    
+    int status=0;
+    
+    String sql="DELETE FROM studentsapplications where st_id='"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+
+public int teachersAppPass(String id){
+    
+    int status=0;
+    
+    String sql1="INSERT INTO teachers SELECT * FROM teachersapplications where t_id='"+id+"' ;";
+    String sql2="DELETE FROM teachersapplications where t_id='"+id+"'";
+    try{
+    st.executeUpdate(sql1);
+    st.executeUpdate(sql2);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+public int teachersAppReject(String id){
+    
+    int status=0;
+    
+    String sql="DELETE FROM teachersapplications where t_id='"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
 public int studentsApp(String id, String fname, String lname, String email, String pno, String pass, String dept){
     
     int status=0;
@@ -72,20 +117,7 @@ public ResultSet studentAppDetails(){
     }
     return rs;
 }
-public int rstudents(String id, String fname, String lname, String email, String pno, String pass, String dept){
-    
-    int status=0;
-    
-    String sql="INSERT INTO `students` (`st_id`, `st_fname`, `st_lname`, `st_email`, `st_pno`, `st_pass`, `st_dept`)VALUES ('"+id+"','"+fname+"','"+lname+"','"+email+"','"+pno+"','"+pass+"','"+dept+"')";
-    try{
-    st.executeUpdate(sql);
-    status =1;
-    }catch(Exception e){
-    System.out.println(e);
-    }
-    return status;
 
-}
 public ResultSet studentDetails(String id, String pass){
 
     String sql="select*from students where st_id='"+id+"' AND st_pass='"+pass+"'";
@@ -96,11 +128,11 @@ public ResultSet studentDetails(String id, String pass){
     }
     return rs;
 }
-public int rteachers(String id, String fname, String lname, String email, String dept, String pno, String pass){
+public int teachersApp(String id, String fname, String lname, String email, String pno, String pass, String dept){
     
     int status=0;
     
-    String sql="INSERT INTO `teachers` (`t_id`, `t_fname`, `t_lname`, `t_email`, `t_dept`, `t_pno`, `t_pass`) VALUES ('"+id+"', '"+fname+"', '"+lname+"', '"+email+"', '"+dept+"', '"+pno+"', '"+pass+"')";
+    String sql="INSERT INTO `teachersapplications` (`t_id`, `t_fname`, `t_lname`, `t_email`, `t_pno`, `t_pass`, `t_dept`)VALUES ('"+id+"','"+fname+"','"+lname+"','"+email+"','"+pno+"','"+pass+"','"+dept+"')";
     try{
     st.executeUpdate(sql);
     status =1;
@@ -109,6 +141,16 @@ public int rteachers(String id, String fname, String lname, String email, String
     }
     return status;
 
+}
+public ResultSet teacherAppDetails(){
+
+    String sql="select*from teachersapplications";
+    try{
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
 }
 public ResultSet teacherDetails(String id, String pass){
 

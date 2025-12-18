@@ -322,12 +322,12 @@ public class tcreate extends javax.swing.JFrame {
         if(t_id.getText().equals("")||fname.getText().equals("")||lname.getText().equals("")||
                 email.getText().equals("")||dept.getSelectedIndex()==0||pno.getText().equals("")||pass.getText().equals("")){
             
-            JOptionPane.showMessageDialog(this,"register Error","register alert",1);
+            JOptionPane.showMessageDialog(this,"Please fill all the Details","register alert",1);
         }
         else{
-        if(db.rteachers(t_id.getText(),fname.getText(),lname.getText(),
-                email.getText(),dept.getSelectedItem().toString(),pno.getText(),pass.getText())==1){
-        JOptionPane.showMessageDialog(this,"register Success","register alert",1);
+        if(db.teachersApp(t_id.getText(),fname.getText(),lname.getText(),
+                email.getText(),pno.getText(),pass.getText(),dept.getSelectedItem().toString())==1){
+        JOptionPane.showMessageDialog(this,"Your Application have been forwarded","register alert",1);
         login l=new login();
         l.setVisible(true);
         dispose();
