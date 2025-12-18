@@ -4,6 +4,7 @@
  */
 package cms;
 import java.sql.*;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Dell
@@ -164,9 +165,11 @@ try {
         jLabel10.setText("First Name:");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, 80, -1));
 
+        a_fname.setEditable(false);
         a_fname.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(a_fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 320, 146, 33));
 
+        a_id.setEditable(false);
         a_id.setBackground(new java.awt.Color(204, 255, 255));
         getContentPane().add(a_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 410, 146, 33));
 
@@ -213,7 +216,6 @@ try {
         });
         getContentPane().add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 560, 130, 53));
 
-        a_pno.setEditable(false);
         a_pno.setBackground(new java.awt.Color(204, 255, 255));
         a_pno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -278,9 +280,22 @@ try {
 
     private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
         // TODO add your handling code here:
-        AdminHome h=new AdminHome(ID);
-        h.setVisible(true);
-        dispose();
+         CMS db=new CMS();
+        if(!a_email.getText().equals("")&&!a_pno.getText().equals("")){
+            if(db.AdChangeDetails(ID, a_email.getText(), a_pno.getText())==1){
+                JOptionPane.showMessageDialog(this,"Your changes have been saved!", "Changes ALert",1);
+                AdminHome h=new AdminHome(ID);
+                h.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(this,"Something is missing", "Changes ALert",1);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this,"Please fill the details!", "Detail ALert",1);
+                profile p=new profile(ID);
+                p.setVisible(true);
+                dispose();
+        }
         
     }//GEN-LAST:event_saveActionPerformed
 

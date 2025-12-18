@@ -189,7 +189,7 @@ public ResultSet studentName(String id){
     return rs;
 }
 
-                    /**/
+                    
 public ResultSet AdminName(String id){
 
     String sql="select *from admins where a_id='"+id+"'";
@@ -224,12 +224,12 @@ public int stdChangePass(String id,String cpass){
     return status;
 
 }
-                  /**/
+                 
 public int AdPass(String id,String cpass){
     
     int status=0;
     
-    String sql="UPDATE `admins` SET `a_pass` = '"+cpass+"' WHERE `students`.`st_id` = '"+id+"'";
+    String sql="UPDATE `admins` SET `a_pass` = '"+cpass+"' WHERE `admins`.`a_id` = '"+id+"'";
     try{
     st.executeUpdate(sql);
     status =1;
@@ -276,6 +276,20 @@ public int teaChangeDetails(String id,String email,String pno){
     int status=0;
     
     String sql="UPDATE `teachers` SET `t_email` = '"+email+"', `t_pno` = '"+pno+"' WHERE `teachers`.`t_id` = '"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+public int AdChangeDetails(String id,String email,String pno){
+    
+    int status=0;
+    
+    String sql="UPDATE `admins` SET `a_email` = '"+email+"', `a_pno` = '"+pno+"' WHERE `admins`.`a_id` = '"+id+"'";
     try{
     st.executeUpdate(sql);
     status =1;
