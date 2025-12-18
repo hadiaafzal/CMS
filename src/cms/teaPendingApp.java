@@ -4,6 +4,8 @@
  */
 package cms;
 import java.sql.*;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +15,31 @@ public class teaPendingApp extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(teaPendingApp.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form teaPendingApp
      */
     public teaPendingApp() {
         initComponents();
+    }
+    public teaPendingApp(String name,String ID) {
+        initComponents();
+        this.ID=ID;
+        fullname.setText(name);
+        AdminID.setText(ID);
+        this.FullName=fullname.getText();
+        CMS db = new CMS();
+        ResultSet rs;
+        rs = db.teacherAppDetails();
+        DefaultTableModel tb = (DefaultTableModel) application.getModel();
+        try {
+            while (rs.next()) {
+                Object teacherApp[] = {false,rs.getString("t_id"), rs.getString("t_fname"), rs.getString("t_lname"), rs.getString("t_dept"), rs.getString("t_email")};
+                tb.addRow(teacherApp);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
   
     /**
@@ -39,7 +61,7 @@ public class teaPendingApp extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        adminid = new javax.swing.JTextField();
+        AdminID = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         application = new javax.swing.JTable();
         back = new javax.swing.JButton();
@@ -148,20 +170,17 @@ public class teaPendingApp extends javax.swing.JFrame {
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
 
-        adminid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminid.addActionListener(new java.awt.event.ActionListener() {
+        AdminID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AdminID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminidActionPerformed(evt);
+                AdminIDActionPerformed(evt);
             }
         });
-        getContentPane().add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
+        getContentPane().add(AdminID, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
 
         application.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "CheckBox", "St ID", "First Name", "Last Name", "Department", "Email"
@@ -249,9 +268,9 @@ public class teaPendingApp extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void adminidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminidActionPerformed
+    private void AdminIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_adminidActionPerformed
+    }//GEN-LAST:event_AdminIDActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
@@ -262,10 +281,48 @@ public class teaPendingApp extends javax.swing.JFrame {
 
     private void rejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectActionPerformed
         // TODO add your handling code here:
+        CMS db=new CMS();
+        int status=0;
+        for (int i = 0; i < application.getRowCount(); i++) {
+
+    Boolean isChecked = (Boolean) application.getValueAt(i, 0);
+    if (isChecked != null && isChecked) {
+        String teacherID = application.getValueAt(i, 1).toString();
+        if(db.teachersAppReject(teacherID)==1){
+            status =1;
+        }
+    }
+}   if(status==1){
+    JOptionPane.showMessageDialog(this, "Applications have been rejected","Reject Alert",1);
+    teaPendingApp s=new teaPendingApp(FullName,ID);
+    s.setVisible(true);
+    dispose();
+}   else{
+    JOptionPane.showMessageDialog(this,"No application is selected", "Approve Alert",1);
+}
     }//GEN-LAST:event_rejectActionPerformed
 
     private void approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveActionPerformed
         // TODO add your handling code here:
+        CMS db=new CMS();
+        int status=0;
+        for (int i = 0; i < application.getRowCount(); i++) {
+
+    Boolean isChecked = (Boolean) application.getValueAt(i, 0);
+    if (isChecked != null && isChecked) {
+        String teacherID = application.getValueAt(i, 1).toString();
+        if(db.teachersAppPass(teacherID)==1){
+            status =1;
+        }
+    }
+}   if(status==1){
+    JOptionPane.showMessageDialog(this, "Applications have been approved","Approve Alert",1);
+    teaPendingApp s=new teaPendingApp(FullName,ID);
+    s.setVisible(true);
+    dispose();
+}   else{
+    JOptionPane.showMessageDialog(this,"No application is selected", "Approve Alert",1);
+}
     }//GEN-LAST:event_approveActionPerformed
 
     /**
@@ -294,8 +351,8 @@ public class teaPendingApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AdminID;
     private javax.swing.JButton about;
-    private javax.swing.JTextField adminid;
     private javax.swing.JTable application;
     private javax.swing.JButton approve;
     private javax.swing.JButton back;

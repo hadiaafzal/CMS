@@ -25,7 +25,7 @@ private String ID;
          public AdPass(String name,String ID) {
         initComponents();
         CMS db=new CMS();
-        ResultSet rs = db.studentName(ID);
+        ResultSet rs = db.AdminName(ID);
         this.ID=ID;
         fullname.setText(name);
         adminid.setText(ID);
@@ -33,7 +33,7 @@ private String ID;
         
         try {
     if (rs.next()) {
-        String realPass = rs.getString("st_pass");
+        String realPass = rs.getString("a_pass");
         this.realPass=realPass;
         
     }
@@ -382,7 +382,7 @@ AAbout a=new AAbout();
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
         // TODO add your handling code here:
-        AdminHome h=new AdminHome();
+        AdminHome h=new AdminHome(ID);
         h.setVisible(true);
         dispose();
     }//GEN-LAST:event_cancelActionPerformed
@@ -394,9 +394,9 @@ AAbout a=new AAbout();
         if(enterPass.getText().equals(realPass)){
             
             if((newPass.getText().equals(confirmNewPass.getText()))&&!newPass.getText().equals("")){
-                if(db.stdChangePass(ID, newPass.getText())==1){
+                if(db.AdPass(ID, newPass.getText())==1){
                     JOptionPane.showMessageDialog(this,"Your Password has been changed","Password alert",1);
-                    home h=new home(ID);
+                    AdminHome h=new AdminHome(ID);
                     h.setVisible(true);
                     dispose();
                 }

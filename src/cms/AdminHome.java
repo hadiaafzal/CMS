@@ -160,7 +160,7 @@ try {
 
         cassign.setBackground(new java.awt.Color(204, 204, 204));
         cassign.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        cassign.setText("Check Assignments");
+        cassign.setText("Assign Subject");
         cassign.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cassignActionPerformed(evt);
@@ -267,7 +267,7 @@ try {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        AAbout a=new AAbout();
+        AAbout a=new AAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
@@ -278,7 +278,7 @@ try {
 
     private void cpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpassActionPerformed
         // TODO add your handling code here:
-        AdPass tcp=new AdPass();
+        AdPass tcp=new AdPass(FullName,ID);
         tcp.setVisible(true);
         dispose();
     }//GEN-LAST:event_cpassActionPerformed
@@ -312,7 +312,7 @@ try {
 
     private void tappActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tappActionPerformed
         // TODO add your handling code here:
-                      teaPendingApp a=new teaPendingApp();
+                      teaPendingApp a=new teaPendingApp(FullName,ID);
         a.setVisible(true);
         dispose();  
 

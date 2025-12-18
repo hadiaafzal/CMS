@@ -15,6 +15,7 @@ public class StdApp extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StdApp.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form StdApp
      */
@@ -25,7 +26,8 @@ public class StdApp extends javax.swing.JFrame {
         initComponents();
         this.ID=ID;
         fullname.setText(name);
-        teacherid.setText(ID);
+        AdminID.setText(ID);
+        this.FullName=fullname.getText();
         CMS db = new CMS();
         ResultSet rs;
         rs = db.studentAppDetails();
@@ -65,7 +67,7 @@ public class StdApp extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        teacherid = new javax.swing.JTextField();
+        AdminID = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         application = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
@@ -204,13 +206,13 @@ public class StdApp extends javax.swing.JFrame {
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
 
-        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        teacherid.addActionListener(new java.awt.event.ActionListener() {
+        AdminID.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        AdminID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teacheridActionPerformed(evt);
+                AdminIDActionPerformed(evt);
             }
         });
-        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
+        getContentPane().add(AdminID, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
 
         application.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -269,9 +271,9 @@ public class StdApp extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+    private void AdminIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_teacheridActionPerformed
+    }//GEN-LAST:event_AdminIDActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
         // TODO add your handling code here:
@@ -282,17 +284,48 @@ public class StdApp extends javax.swing.JFrame {
 
     private void approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveActionPerformed
         // TODO add your handling code here:
+        CMS db=new CMS();
+        int status=0;
         for (int i = 0; i < application.getRowCount(); i++) {
 
     Boolean isChecked = (Boolean) application.getValueAt(i, 0);
     if (isChecked != null && isChecked) {
-        String studentId = application.getValueAt(i, 1).toString();
+        String studentID = application.getValueAt(i, 1).toString();
+        if(db.studentsAppPass(studentID)==1){
+            status =1;
+        }
     }
+}   if(status==1){
+    JOptionPane.showMessageDialog(this, "Applications have been approved","Approve Alert",1);
+    StdApp s=new StdApp(FullName,ID);
+    s.setVisible(true);
+    dispose();
+}   else{
+    JOptionPane.showMessageDialog(this,"No application is selected", "Approve Alert",1);
 }
     }//GEN-LAST:event_approveActionPerformed
 
     private void rejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectActionPerformed
         // TODO add your handling code here:
+        CMS db=new CMS();
+        int status=0;
+        for (int i = 0; i < application.getRowCount(); i++) {
+
+    Boolean isChecked = (Boolean) application.getValueAt(i, 0);
+    if (isChecked != null && isChecked) {
+        String studentID = application.getValueAt(i, 1).toString();
+        if(db.studentsAppReject(studentID)==1){
+            status =1;
+        }
+    }
+}   if(status==1){
+    JOptionPane.showMessageDialog(this, "Applications have been rejected","Reject Alert",1);
+    StdApp s=new StdApp(FullName,ID);
+    s.setVisible(true);
+    dispose();
+}   else{
+    JOptionPane.showMessageDialog(this,"No application is selected", "Approve Alert",1);
+}
     }//GEN-LAST:event_rejectActionPerformed
 
     /**
@@ -321,6 +354,7 @@ public class StdApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField AdminID;
     private javax.swing.JButton about;
     private javax.swing.JTable application;
     private javax.swing.JButton approve;
@@ -338,6 +372,5 @@ public class StdApp extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton profile;
     private javax.swing.JButton reject;
-    private javax.swing.JTextField teacherid;
     // End of variables declaration//GEN-END:variables
 }
