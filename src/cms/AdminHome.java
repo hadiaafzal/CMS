@@ -293,7 +293,7 @@ try {
 
     private void cassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cassignActionPerformed
         // TODO add your handling code here:
-        CheckAssign a=new CheckAssign();
+        subjectAssign a=new subjectAssign(FullName,ID);
         a.setVisible(true);
         dispose();
                

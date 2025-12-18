@@ -314,6 +314,16 @@ public int AdChangeDetails(String id,String email,String pno){
     return status;
 
 }
+public ResultSet AllTeachers(){
+
+    String sql="select *from teachers";
+    try{
+    rs=st.executeQuery(sql);
+    }catch(Exception e){
+    System.out.print(e);
+    }
+    return rs;
+}
     /**
      * @param args the command line arguments
      */

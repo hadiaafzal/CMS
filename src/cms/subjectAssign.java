@@ -9,15 +9,36 @@ import java.sql.*;
  *
  * @author Dell
  */
-public class CheckAssign extends javax.swing.JFrame {
+public class subjectAssign extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CheckAssign.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(subjectAssign.class.getName());
     private String ID;
     /**
      * Creates new form CheckAssign
      */
-    public CheckAssign() {
+    public subjectAssign() {
         initComponents();
+    }
+    public subjectAssign(String name,String ID) {
+        initComponents();
+        CMS db=new CMS();
+        ResultSet rs= db.AllTeachers();
+        this.ID=ID;
+        fullname.setText(name);
+        adminid.setText(ID);
+        teacher.removeAllItems(); // clear previous items
+        teacher.addItem("Select Teacher");
+        try {
+        while (rs.next()) {
+            String fname = rs.getString("t_fname");
+        String lname = rs.getString("t_lname");
+
+        String teacherFullName=(fname + " " + lname);
+            teacher.addItem(teacherFullName);
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     }
     
     
@@ -38,11 +59,15 @@ public class CheckAssign extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         home = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        teacherid = new javax.swing.JTextField();
+        adminid = new javax.swing.JTextField();
+        subject = new javax.swing.JComboBox<>();
+        teacher = new javax.swing.JComboBox<>();
+        time = new javax.swing.JComboBox<>();
+        day = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,17 +157,6 @@ public class CheckAssign extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
-        logout.setBackground(new java.awt.Color(255, 0, 51));
-        logout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setText("LOGOUT");
-        logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
-
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Name:");
@@ -150,32 +164,54 @@ public class CheckAssign extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("T. ID:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
+        jLabel6.setText("A. ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, 60, 40));
 
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
 
-        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        teacherid.addActionListener(new java.awt.event.ActionListener() {
+        adminid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        adminid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teacheridActionPerformed(evt);
+                adminidActionPerformed(evt);
             }
         });
-        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, 170, 40));
+        getContentPane().add(adminid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 210, 170, 40));
+
+        subject.setBackground(new java.awt.Color(153, 153, 153));
+        subject.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        subject.setForeground(new java.awt.Color(255, 255, 255));
+        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Subject", "Programming Fundamentals", "Discrete Structure", "I & CT", "English I", "Duscrete Structure", "Calculus & Analytical Geometry", "Mathematics I", "Mathematics II", "Multivariable Calculus", "Linear Algebra", "Digital Logic Design", "Object Oriented programming", "Database Management" }));
+        getContentPane().add(subject, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 230, 50));
+
+        teacher.setBackground(new java.awt.Color(153, 153, 153));
+        teacher.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        teacher.setForeground(new java.awt.Color(255, 255, 255));
+        teacher.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Teacher" }));
+        getContentPane().add(teacher, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 300, 230, 50));
+
+        time.setBackground(new java.awt.Color(153, 153, 153));
+        time.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        time.setForeground(new java.awt.Color(255, 255, 255));
+        time.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Time", "09:00 - 12:00", "14:00 - 17:00", "18:00 - 21:00" }));
+        getContentPane().add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 230, 50));
+
+        day.setBackground(new java.awt.Color(153, 153, 153));
+        day.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        day.setForeground(new java.awt.Color(255, 255, 255));
+        day.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Day", "Monday", "Teusday", "Wednesday", "Friday", "Saturday", "Sunday" }));
+        getContentPane().add(day, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 410, 230, 50));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("ASSIGN  TEACHER");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 430, 80));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-               login l=new login();
-        l.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_logoutActionPerformed
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
@@ -193,14 +229,14 @@ public class CheckAssign extends javax.swing.JFrame {
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        AAbout a=new AAbout();
+        AAbout a=new AAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+    private void adminidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_teacheridActionPerformed
+    }//GEN-LAST:event_adminidActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,22 +260,26 @@ public class CheckAssign extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new CheckAssign().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new subjectAssign().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
+    private javax.swing.JTextField adminid;
+    private javax.swing.JComboBox<String> day;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton logout;
     private javax.swing.JButton profile;
-    private javax.swing.JTextField teacherid;
+    private javax.swing.JComboBox<String> subject;
+    private javax.swing.JComboBox<String> teacher;
+    private javax.swing.JComboBox<String> time;
     // End of variables declaration//GEN-END:variables
 }
