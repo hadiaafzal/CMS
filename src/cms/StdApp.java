@@ -40,6 +40,7 @@ public class StdApp extends javax.swing.JFrame {
         }
     }
     
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -280,6 +281,13 @@ public class StdApp extends javax.swing.JFrame {
 
     private void approveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_approveActionPerformed
         // TODO add your handling code here:
+        for (int i = 0; i < application.getRowCount(); i++) {
+
+    Boolean isChecked = (Boolean) application.getValueAt(i, 0);
+    if (isChecked != null && isChecked) {
+        String studentId = application.getValueAt(i, 1).toString();
+    }
+}
     }//GEN-LAST:event_approveActionPerformed
 
     private void rejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectActionPerformed
