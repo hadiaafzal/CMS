@@ -4,6 +4,8 @@
  */
 package cms;
 import java.sql.*;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,6 +15,8 @@ public class subjectAssign extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(subjectAssign.class.getName());
     private String ID;
+    private String FullName;
+    private ArrayList teacherIds;
     /**
      * Creates new form CheckAssign
      */
@@ -22,23 +26,32 @@ public class subjectAssign extends javax.swing.JFrame {
     public subjectAssign(String name,String ID) {
         initComponents();
         CMS db=new CMS();
+        ArrayList<String> teacherIds = new ArrayList<>();
         ResultSet rs= db.AllTeachers();
+        ResultSet rs2= db.AllSubject();
         this.ID=ID;
         fullname.setText(name);
+        this.FullName=fullname.getText();
         adminid.setText(ID);
         teacher.removeAllItems(); // clear previous items
         teacher.addItem("Select Teacher");
+        
         try {
         while (rs.next()) {
+            teacherIds.add(rs.getString("t_id"));
             String fname = rs.getString("t_fname");
         String lname = rs.getString("t_lname");
 
         String teacherFullName=(fname + " " + lname);
             teacher.addItem(teacherFullName);
         }
+        while(rs2.next()){
+        String subName= rs2.getString("sub_name");
+        subject.addItem(subName);
+        }
     } catch (Exception e) {
         e.printStackTrace();
-    }
+    }this.teacherIds=teacherIds;
     }
     
     
@@ -70,6 +83,7 @@ public class subjectAssign extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         cancel = new javax.swing.JButton();
         confirm = new javax.swing.JButton();
+        classNo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -183,7 +197,7 @@ public class subjectAssign extends javax.swing.JFrame {
         subject.setBackground(new java.awt.Color(153, 153, 153));
         subject.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         subject.setForeground(new java.awt.Color(255, 255, 255));
-        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Subject", "Programming Fundamentals", "Discrete Structure", "I & CT", "English I", "Duscrete Structure", "Calculus & Analytical Geometry", "Mathematics I", "Mathematics II", "Multivariable Calculus", "Linear Algebra", "Digital Logic Design", "Object Oriented programming", "Database Management" }));
+        subject.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Subject" }));
         getContentPane().add(subject, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 300, 230, 50));
 
         teacher.setBackground(new java.awt.Color(153, 153, 153));
@@ -231,6 +245,10 @@ public class subjectAssign extends javax.swing.JFrame {
         });
         getContentPane().add(confirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 550, 130, 50));
 
+        classNo.setBackground(new java.awt.Color(204, 204, 204));
+        classNo.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        getContentPane().add(classNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 520, 170, 50));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
@@ -271,9 +289,26 @@ public class subjectAssign extends javax.swing.JFrame {
 
     private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
         // TODO add your handling code here:
-        AdminHome h=new AdminHome(ID);
-        h.setVisible(true);
+        CMS db=new CMS();
+        //System.out.println(teacherIds);
+        int selectedIndex = teacher.getSelectedIndex();
+
+
+
+// subtract 1 because index 0 = "Select Teacher"
+String selectedTeacherId =teacherIds.get(selectedIndex).toString();
+    if(teacher.getSelectedIndex()==0||subject.getSelectedIndex()==0||day.getSelectedIndex()==0||time.getSelectedIndex()==0||classNo.getText().equals("")){
+    JOptionPane.showMessageDialog(this, "Please Enter all the details");
+    }
+    else{
+    if(db.assignSub(subject.getSelectedItem().toString(), selectedTeacherId, day.getSelectedItem().toString(), time.getSelectedItem().toString(), classNo.getText())==1){
+        JOptionPane.showMessageDialog(this, "The subject has been assigned");
+        subjectAssign s=new subjectAssign(FullName,ID);
+        s.setVisible(true);
         dispose();
+    }
+    }
+    
     }//GEN-LAST:event_confirmActionPerformed
 
     /**
@@ -305,6 +340,7 @@ public class subjectAssign extends javax.swing.JFrame {
     private javax.swing.JButton about;
     private javax.swing.JTextField adminid;
     private javax.swing.JButton cancel;
+    private javax.swing.JTextField classNo;
     private javax.swing.JButton confirm;
     private javax.swing.JComboBox<String> day;
     private javax.swing.JTextField fullname;
