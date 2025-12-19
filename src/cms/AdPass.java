@@ -345,7 +345,7 @@ private String ID;
                 .addGap(40, 40, 40))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, 490));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
