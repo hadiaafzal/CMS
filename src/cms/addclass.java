@@ -240,10 +240,15 @@ public class addclass extends javax.swing.JFrame {
 
         jCheckBox8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox8.setForeground(new java.awt.Color(255, 51, 51));
-        jCheckBox8.setText("Mathematics -II");
+        jCheckBox8.setText("Mathematics-II");
         jCheckBox8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCheckBox8ItemStateChanged(evt);
+            }
+        });
+        jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox8ActionPerformed(evt);
             }
         });
 
@@ -263,11 +268,11 @@ public class addclass extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 370, 260, 40));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 260, 40));
 
         jCheckBox4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox4.setForeground(new java.awt.Color(255, 51, 51));
-        jCheckBox4.setText("Mathematics -I");
+        jCheckBox4.setText("Mathematics-I");
         jCheckBox4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCheckBox4ItemStateChanged(evt);
@@ -290,7 +295,7 @@ public class addclass extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 250, 40));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, 250, 40));
 
         jCheckBox3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox3.setForeground(new java.awt.Color(255, 51, 51));
@@ -335,8 +340,8 @@ public class addclass extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
+                .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -373,7 +378,7 @@ public class addclass extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 430, 250, 40));
+        getContentPane().add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 250, 40));
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(255, 51, 51));
@@ -400,7 +405,7 @@ public class addclass extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 260, 40));
+        getContentPane().add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 410, 260, 40));
 
         jCheckBox6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox6.setForeground(new java.awt.Color(255, 51, 51));
@@ -410,14 +415,17 @@ public class addclass extends javax.swing.JFrame {
                 jCheckBox6ItemStateChanged(evt);
             }
         });
+        jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, 254, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jCheckBox6, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -427,7 +435,7 @@ public class addclass extends javax.swing.JFrame {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 260, -1));
+        getContentPane().add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 260, 40));
 
         jCheckBox7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jCheckBox7.setForeground(new java.awt.Color(255, 51, 51));
@@ -561,27 +569,6 @@ public class addclass extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jCheckBox3ItemStateChanged
 
-    private void jCheckBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox4ItemStateChanged
-        // TODO add your handling code here:
-          int count = 0;
-    
-    // Count how many checkboxes are currently selected
-    if (jCheckBox1.isSelected()) count++;
-    if (jCheckBox2.isSelected()) count++;
-    if (jCheckBox3.isSelected()) count++;
-    if (jCheckBox4.isSelected()) count++;
-    if (jCheckBox5.isSelected()) count++;
-    if (jCheckBox6.isSelected()) count++;
-    if (jCheckBox7.isSelected()) count++;
-    if (jCheckBox8.isSelected()) count++;
-
-    // If we have selected more than 5 items, unselect the current one
-    if (count > 5) {
-        // This line gets the checkbox that triggered the event and unselects it
-        ((JCheckBox)evt.getSource()).setSelected(false);
-    }
-    }//GEN-LAST:event_jCheckBox4ItemStateChanged
-
     private void jCheckBox7ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox7ItemStateChanged
         // TODO add your handling code here:
           int count = 0;
@@ -624,27 +611,6 @@ public class addclass extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_jCheckBox1ItemStateChanged
 
-    private void jCheckBox8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox8ItemStateChanged
-        // TODO add your handling code here:
-        int count = 0;
-    
-    // Count how many checkboxes are currently selected
-    if (jCheckBox1.isSelected()) count++;
-    if (jCheckBox2.isSelected()) count++;
-    if (jCheckBox3.isSelected()) count++;
-    if (jCheckBox4.isSelected()) count++;
-    if (jCheckBox5.isSelected()) count++;
-    if (jCheckBox6.isSelected()) count++;
-    if (jCheckBox7.isSelected()) count++;
-    if (jCheckBox8.isSelected()) count++;
-
-    // If we have selected more than 5 items, unselect the current one
-    if (count > 5) {
-        // This line gets the checkbox that triggered the event and unselects it
-        ((JCheckBox)evt.getSource()).setSelected(false);
-    }
-    }//GEN-LAST:event_jCheckBox8ItemStateChanged
-
     private void jCheckBox5ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox5ItemStateChanged
         // TODO add your handling code here:
           int count = 0;
@@ -665,6 +631,56 @@ public class addclass extends javax.swing.JFrame {
         ((JCheckBox)evt.getSource()).setSelected(false);
     }
     }//GEN-LAST:event_jCheckBox5ItemStateChanged
+
+    private void jCheckBox8ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox8ItemStateChanged
+        // TODO add your handling code here:
+        int count = 0;
+
+        // Count how many checkboxes are currently selected
+        if (jCheckBox1.isSelected()) count++;
+        if (jCheckBox2.isSelected()) count++;
+        if (jCheckBox3.isSelected()) count++;
+        if (jCheckBox4.isSelected()) count++;
+        if (jCheckBox5.isSelected()) count++;
+        if (jCheckBox6.isSelected()) count++;
+        if (jCheckBox7.isSelected()) count++;
+        if (jCheckBox8.isSelected()) count++;
+
+        // If we have selected more than 5 items, unselect the current one
+        if (count > 5) {
+            // This line gets the checkbox that triggered the event and unselects it
+            ((JCheckBox)evt.getSource()).setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox8ItemStateChanged
+
+    private void jCheckBox4ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox4ItemStateChanged
+        // TODO add your handling code here:
+        int count = 0;
+
+        // Count how many checkboxes are currently selected
+        if (jCheckBox1.isSelected()) count++;
+        if (jCheckBox2.isSelected()) count++;
+        if (jCheckBox3.isSelected()) count++;
+        if (jCheckBox4.isSelected()) count++;
+        if (jCheckBox5.isSelected()) count++;
+        if (jCheckBox6.isSelected()) count++;
+        if (jCheckBox7.isSelected()) count++;
+        if (jCheckBox8.isSelected()) count++;
+
+        // If we have selected more than 5 items, unselect the current one
+        if (count > 5) {
+            // This line gets the checkbox that triggered the event and unselects it
+            ((JCheckBox)evt.getSource()).setSelected(false);
+        }
+    }//GEN-LAST:event_jCheckBox4ItemStateChanged
+
+    private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox6ActionPerformed
 
     /**
      * @param args the command line arguments

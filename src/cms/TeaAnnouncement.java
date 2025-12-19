@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cms;
-
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import java.sql.*;
 
@@ -33,9 +33,9 @@ public class TeaAnnouncement extends javax.swing.JFrame {
         confirm.setEnabled(false); 
         announcement.setEditable(false); 
         announcement.setText("Please log in as a teacher to make an announcement.");
-        
-        
-        JOptionPane.showMessageDialog(this, "No teacher logged in!", "Access Denied", JOptionPane.ERROR_MESSAGE);
+
+        ImageIcon customIcon = new ImageIcon(getClass().getResource("/logo/User Male.jpg"));
+        JOptionPane.showMessageDialog(null, "No teacher logged in!", "Access Denied", JOptionPane.PLAIN_MESSAGE,customIcon);
     }
         
     }
