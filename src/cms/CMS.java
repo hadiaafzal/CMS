@@ -328,16 +328,45 @@ public int AdChangeDetails(String id,String email,String pno){
     return status;
 
 }
-public ResultSet AllTeachers(){
-
-    String sql="select *from teachers";
-    try{
-    rs=st.executeQuery(sql);
-    }catch(Exception e){
-    System.out.print(e);
+public ResultSet AllTeachers() {
+    String sql = "SELECT * FROM teachers";
+    try {
+        Statement stLocal = con.createStatement();
+        return stLocal.executeQuery(sql);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
     }
-    return rs;
 }
+
+public ResultSet AllSubject() {
+    String sql = "SELECT * FROM subject";
+    try {
+        Statement stLocal = con.createStatement();
+        return stLocal.executeQuery(sql);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+}
+public int assignSub(String subName,String tid,String day,String time,String sclass){
+    
+    int status=0;
+    
+    String sql1="UPDATE `assignedsubject` SET `t_id` = '"+tid+"', `sub_day` = '"+day+"', `sub_time` = '"+time+"', `sub_class` = '"+sclass+"' WHERE `assignedsubject`.`sub_name` = '"+subName+"'";
+    String sql2="DELETE FROM subject where sub_name='"+subName+"'";
+    try{
+    st.executeUpdate(sql1);
+    st.executeUpdate(sql2);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
+
+
     /**
      * @param args the command line arguments
      */

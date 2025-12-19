@@ -237,21 +237,8 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="14">
+          <StringArray count="1">
             <StringItem index="0" value="Select Subject"/>
-            <StringItem index="1" value="Programming Fundamentals"/>
-            <StringItem index="2" value="Discrete Structure"/>
-            <StringItem index="3" value="I &amp; CT"/>
-            <StringItem index="4" value="English I"/>
-            <StringItem index="5" value="Duscrete Structure"/>
-            <StringItem index="6" value="Calculus &amp; Analytical Geometry"/>
-            <StringItem index="7" value="Mathematics I"/>
-            <StringItem index="8" value="Mathematics II"/>
-            <StringItem index="9" value="Multivariable Calculus"/>
-            <StringItem index="10" value="Linear Algebra"/>
-            <StringItem index="11" value="Digital Logic Design"/>
-            <StringItem index="12" value="Object Oriented programming"/>
-            <StringItem index="13" value="Database Management"/>
           </StringArray>
         </Property>
       </Properties>
@@ -408,6 +395,21 @@
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="620" y="550" width="130" height="50"/>
+        </Constraint>
+      </Constraints>
+    </Component>
+    <Component class="javax.swing.JTextField" name="classNo">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="3"/>
+        </Property>
+      </Properties>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="280" y="520" width="170" height="50"/>
         </Constraint>
       </Constraints>
     </Component>
