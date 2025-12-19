@@ -248,7 +248,7 @@ Tprofile p=new Tprofile(ID);
        CMS db=new CMS();
                // String text=announcement.getText().trim();
                         if (!announcement.getText().equals("")){
-                             if(db.makeAnnouncement(ID,announcement.getText())==1){
+                             if(db.makeAnnouncement(ID,announcement.getText(),fullname.getText())==1){
                             JOptionPane.showMessageDialog(this,"YOUR announcement has been made","Announcement", 1);                     
                             Teahome h=new Teahome(ID);
                             h.setVisible(true);

@@ -29,7 +29,7 @@
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="24" style="3"/>
+          <Font name="Segoe UI" size="36" style="3"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -38,7 +38,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="280" y="200" width="230" height="40"/>
+          <AbsoluteConstraints x="220" y="200" width="340" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -210,7 +210,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="160" y="250" width="460" height="240"/>
+          <AbsoluteConstraints x="130" y="250" width="510" height="310"/>
         </Constraint>
       </Constraints>
 
@@ -218,6 +218,16 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="jTable2">
           <Properties>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder bevelType="1">
+                  <Color PropertyName="highlightOuter" blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                  <Color PropertyName="highlightInner" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                  <Color PropertyName="shadowOuter" blue="80" green="80" id="gray" palette="1" red="80" type="palette"/>
+                  <Color PropertyName="shadowInner" blue="0" green="0" id="black" palette="1" red="0" type="palette"/>
+                </BevelBorder>
+              </Border>
+            </Property>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
                 <Column editable="true" title="Day" type="java.lang.Object"/>

@@ -271,10 +271,10 @@ try{
     return rs;
 }
                        /**/
-public int makeAnnouncement(String id,String announcement){
+public int makeAnnouncement(String id,String announcement,String fullname){
  int status=0;
     
-String sql = "INSERT INTO `announcements` (`t_id`, `announcement`) VALUES ('" + id + "', '" + announcement + "')";  
+String sql = "INSERT INTO `announcements` (`t_id`, `announcement`,`t_fullname`) VALUES ('" + id + "', '" + announcement + "', '" + fullname + "'   )";  
 try{
     st.executeUpdate(sql);
     status =1;

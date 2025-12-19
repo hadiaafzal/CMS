@@ -55,10 +55,10 @@ public class schedule extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("WEEKLY SCHEDULE");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 230, 40));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 200, 340, 40));
 
         back.setBackground(new java.awt.Color(204, 255, 255));
         back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -154,6 +154,7 @@ public class schedule extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
 
+        jTable2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.gray, java.awt.Color.black, java.awt.Color.gray, java.awt.Color.black));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -164,7 +165,7 @@ public class schedule extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable2);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 460, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 250, 510, 310));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
