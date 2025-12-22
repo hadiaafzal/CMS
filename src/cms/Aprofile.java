@@ -175,7 +175,7 @@ try {
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Teacher ID:");
+        jLabel12.setText("Admin ID:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 380, 77, -1));
 
         jLabel9.setBackground(new java.awt.Color(204, 255, 204));

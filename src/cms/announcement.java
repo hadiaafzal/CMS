@@ -26,12 +26,18 @@ public class announcement extends javax.swing.JFrame {
         studentid.setText(ID);
         
         CMS db = new CMS();
-        ResultSet rs= db.announcement(ID);
+        ResultSet rs= db.announcement();
         try {
             while (rs.next()) {
+                String A_Id=rs.getString("announce_id")+ ": "+rs.getString("t_fullname");
+   seeannounce.append(A_Id+"\n"); 
                 String ANNOUNCEMENT=rs.getString("announcement");
-                seeannounce.setText(ANNOUNCEMENT);
-                }
+   seeannounce.append(ANNOUNCEMENT+"\n                                 ");    
+          String date=rs.getString("date");
+   seeannounce.append(date+ "    "); 
+             String time=rs.getString("a_time");
+   seeannounce.append(time+ "\n\n");
+            }
             
         } 
         catch (Exception e) {
@@ -176,7 +182,7 @@ public class announcement extends javax.swing.JFrame {
 
         seeannounce.setEditable(false);
         seeannounce.setColumns(20);
-        seeannounce.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        seeannounce.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
         seeannounce.setRows(5);
         seeannounce.setBorder(javax.swing.BorderFactory.createTitledBorder("ANNOUNCEMENTS"));
         jScrollPane2.setViewportView(seeannounce);

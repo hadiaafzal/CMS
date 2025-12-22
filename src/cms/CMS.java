@@ -259,9 +259,10 @@ public int teaChangePass(String id,String cpass){
 }
 
 
-public ResultSet announcement(String id){
+public ResultSet announcement(){
     
-String sql = "SELECT `announcement` from `announcements` WHERE `announcements`.`t_id` = '"+id+"'";  
+//String sql = "SELECT  `announcement` from `announcements` WHERE `announcements`.`t_id` = '"+id+"'";  
+String sql="select * from announcements";
 try{
 
     rs=st.executeQuery(sql);
@@ -283,9 +284,20 @@ try{
     }
     return status;
 }
-
-
-
+/*v                                                                                                                                                        
+public int modifyAnnouncement(String id,String announcement,String fullname){
+ int status=0;
+    
+String sql = "INSERT INTO `announcements` (`t_id`, `announcement`,`t_fullname`) VALUES ('" + id + "', '" + announcement + "', '" + fullname + "'   )";  
+try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+}
+*/
 public int stdChangeDetails(String id,String email,String pno){
     
     int status=0;

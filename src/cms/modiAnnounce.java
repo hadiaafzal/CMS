@@ -19,7 +19,10 @@ public class modiAnnounce extends javax.swing.JFrame {
     public modiAnnounce() {
         initComponents();
     }
-    
+   /* public modiAnnounce() {
+        initComponents();
+    }
+   */ 
     
 
     /**
