@@ -259,7 +259,21 @@ public int teaChangePass(String id,String cpass){
 }
 
 
-public ResultSet announcement(){
+
+public ResultSet announcement() {
+    ResultSet rs = null;   
+    String sql = "SELECT * FROM `announcement`"; 
+    System.out.println("Executing Query: " + sql); 
+    try {
+        rs = st.executeQuery(sql);
+    } catch(Exception e) {
+        System.out.print("DB Error: " + e);
+    }
+    return rs;
+}
+/*
+public ResultSet announcement(String id){
+>>>>>>> Stashed changes
     
 //String sql = "SELECT  `announcement` from `announcements` WHERE `announcements`.`t_id` = '"+id+"'";  
 String sql="select * from announcements";
@@ -270,7 +284,7 @@ try{
     System.out.print(e);
     }
     return rs;
-}
+}*/
                        /**/
 public int makeAnnouncement(String id,String announcement,String fullname){
  int status=0;
