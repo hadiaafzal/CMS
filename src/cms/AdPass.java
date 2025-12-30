@@ -352,14 +352,14 @@ private String ID;
 
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        Aprofile p=new Aprofile();
+        Aprofile p=new Aprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-                AdminHome h=new AdminHome();
+                AdminHome h=new AdminHome(ID);
         h.setVisible(true);
         dispose();
         
@@ -367,7 +367,7 @@ private String ID;
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-AAbout a=new AAbout();
+AAbout a=new AAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed

@@ -258,10 +258,6 @@ try {
 
     private void announcementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_announcementActionPerformed
         // TODO add your handling code here:
-        
-        
-        
-        
         announcement a=new announcement(FullName,ID);
         a.setVisible(true);
         dispose();

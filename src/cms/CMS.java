@@ -62,6 +62,20 @@ public int studentsAppReject(String id){
     return status;
 
 }
+public int deleteAnnouncement(String id){
+    
+    int status=0;
+    
+    String sql="DELETE FROM `announcements` where `announce_id`='"+id+"'";
+    try{
+    st.executeUpdate(sql);
+    status =1;
+    }catch(Exception e){
+    System.out.println(e);
+    }
+    return status;
+
+}
 
 public int teachersAppPass(String id){
     
@@ -259,10 +273,9 @@ public int teaChangePass(String id,String cpass){
 }
 
 
-
 public ResultSet announcement() {
     ResultSet rs = null;   
-    String sql = "SELECT * FROM `announcement`"; 
+    String sql = "SELECT * FROM `announcements`"; 
     System.out.println("Executing Query: " + sql); 
     try {
         rs = st.executeQuery(sql);
@@ -271,21 +284,7 @@ public ResultSet announcement() {
     }
     return rs;
 }
-/*
-public ResultSet announcement(String id){
->>>>>>> Stashed changes
-    
-//String sql = "SELECT  `announcement` from `announcements` WHERE `announcements`.`t_id` = '"+id+"'";  
-String sql="select * from announcements";
-try{
-
-    rs=st.executeQuery(sql);
-    }catch(Exception e){
-    System.out.print(e);
-    }
-    return rs;
-}*/
-                       /**/
+                    /**/
 public int makeAnnouncement(String id,String announcement,String fullname){
  int status=0;
     
@@ -298,20 +297,20 @@ try{
     }
     return status;
 }
-/*v                                                                                                                                                        
-public int modifyAnnouncement(String id,String announcement,String fullname){
- int status=0;
+                                                                                                                                                       
+/*public ResultSet modifyAnnouncement(){
+
     
-String sql = "INSERT INTO `announcements` (`t_id`, `announcement`,`t_fullname`) VALUES ('" + id + "', '" + announcement + "', '" + fullname + "'   )";  
-try{
-    st.executeUpdate(sql);
-    status =1;
+String sql =  "SELECT * FROM `announcements`";
+        try{
+    rs=st.executeQuery(sql);
+    
     }catch(Exception e){
     System.out.println(e);
     }
-    return status;
-}
-*/
+    return rs;
+}*/
+
 public int stdChangeDetails(String id,String email,String pno){
     
     int status=0;
@@ -385,7 +384,7 @@ public int assignSub(String subName,String tid,String day,String time,String scl
     st.executeUpdate(sql1);
     st.executeUpdate(sql2);
     status =1;
-    }catch(Exception e){
+    }catch(SQLException e){
     System.out.println(e);
     }
     return status;
@@ -397,9 +396,8 @@ public int assignSub(String subName,String tid,String day,String time,String scl
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-       CMS db=new CMS();
-        login lg=new login();
+// TODO code application logic here
+              login lg=new login();
        lg.setVisible(true);
     }
     

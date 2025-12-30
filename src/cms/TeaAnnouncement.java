@@ -5,7 +5,6 @@
 package cms;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import java.sql.*;
 
 /**
  *
