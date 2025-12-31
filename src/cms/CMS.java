@@ -377,14 +377,23 @@ public int assignSub(String subName,String tid,String day,String time,String scl
     return status;
 
 }
-
+public ResultSet schedule(String ID) {
+    String sql = "SELECT * FROM assignedsubject WHERE t_id='"+ID+"'";
+    try {
+        Statement stLocal = con.createStatement();
+        return stLocal.executeQuery(sql);
+    } catch (Exception e) {
+        e.printStackTrace();
+        return null;
+    }
+}
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       CMS db=new CMS();
+      CMS db=new CMS();
         login lg=new login();
        lg.setVisible(true);
     }
