@@ -5,7 +5,6 @@
 package cms;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
-import java.sql.*;
 
 /**
  *
@@ -128,7 +127,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +151,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 840, 130));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, -10, 830, 130));
 
         cancel.setBackground(new java.awt.Color(204, 255, 255));
         cancel.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -198,7 +197,7 @@ public class TeaAnnouncement extends javax.swing.JFrame {
 
         fullname.setEditable(false);
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 170, 40));
+        getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 160, 40));
 
         teacherid.setEditable(false);
         teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -207,10 +206,10 @@ public class TeaAnnouncement extends javax.swing.JFrame {
                 teacheridActionPerformed(evt);
             }
         });
-        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 170, 40));
+        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 200, 160, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/blurimg.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 840, 510));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 820, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -250,9 +249,7 @@ Tprofile p=new Tprofile(ID);
                         if (!announcement.getText().equals("")){
                              if(db.makeAnnouncement(ID,announcement.getText(),fullname.getText())==1){
                             JOptionPane.showMessageDialog(this,"YOUR announcement has been made","Announcement", 1);                     
-                            Teahome h=new Teahome(ID);
-                            h.setVisible(true);
-                            dispose();
+
                             }
                         }  
     

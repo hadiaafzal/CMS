@@ -262,6 +262,7 @@ try {
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
+        
                
     }//GEN-LAST:event_homeActionPerformed
 
@@ -285,10 +286,19 @@ try {
 
     private void mannounceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mannounceActionPerformed
         // TODO add your handling code here:
+        String currentAdminName = fullname.getText(); // Or wherever you store the login name
+        String currentAdminID = adminid.getText();       // Or the ID variable
         
- modiAnnounce tcp=new modiAnnounce();
-        tcp.setVisible(true);
-        dispose();
+        if (currentAdminName.isEmpty() || currentAdminID.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, 
+            "Access Denied: Please log in as an administrator first.", 
+            "Authentication Required", 
+            javax.swing.JOptionPane.ERROR_MESSAGE);
+    } else {
+modiAnnounce obj = new modiAnnounce(currentAdminName, currentAdminID); 
+obj.setVisible(true);
+        }              
+
     }//GEN-LAST:event_mannounceActionPerformed
 
     private void cassignActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cassignActionPerformed

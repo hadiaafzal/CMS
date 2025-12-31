@@ -40,7 +40,7 @@ public class announcement extends javax.swing.JFrame {
             }
             
         } 
-        catch (Exception e) {
+        catch (SQLException e) {
             System.out.println("ERROR" + e);
         }
   
@@ -182,7 +182,7 @@ public class announcement extends javax.swing.JFrame {
 
         seeannounce.setEditable(false);
         seeannounce.setColumns(20);
-        seeannounce.setFont(new java.awt.Font("Book Antiqua", 3, 24)); // NOI18N
+        seeannounce.setFont(new java.awt.Font("Bodoni MT", 3, 18)); // NOI18N
         seeannounce.setRows(5);
         seeannounce.setBorder(javax.swing.BorderFactory.createTitledBorder("ANNOUNCEMENTS"));
         jScrollPane2.setViewportView(seeannounce);

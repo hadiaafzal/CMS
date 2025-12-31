@@ -228,11 +228,9 @@ private boolean passwordVisible = false; // Add this variable to your class fiel
                 th.setVisible(true);
                 dispose();
                 return;
-
             }
 
             JOptionPane.showMessageDialog(this,"login alert","Error",2);
-
         }catch(Exception e){
             System.out.println(e);
         }

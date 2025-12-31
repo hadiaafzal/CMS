@@ -4,6 +4,12 @@
  */
 package cms;
 import java.sql.*;
+import java.awt.Font;
+import javax.swing.JOptionPane;
+import java.awt.Component;
+
+
+
 
 /**
  *
@@ -13,18 +19,58 @@ public class modiAnnounce extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(modiAnnounce.class.getName());
     private String ID;
+    private String FullName;
     /**
      * Creates new form modiAnnounce
      */
     public modiAnnounce() {
         initComponents();
     }
-   /* public modiAnnounce() {
-        initComponents();
-    }
-   */ 
-    
+    public  modiAnnounce(String name, String ID) {
+    initComponents();
+     this.ID=ID;
+        fullname.setText(name);
+        a_id.setText(ID);
+        this.FullName=fullname.getText();
 
+    announcementPanel.removeAll();
+    announcementPanel.setLayout(new javax.swing.BoxLayout(announcementPanel, javax.swing.BoxLayout.Y_AXIS));
+
+    CMS db = new CMS();
+    ResultSet rs = db.announcement();
+    try {
+        while (rs.next()) {
+            String announceID = rs.getString("announce_id");
+            String teacherName = rs.getString("t_fullname");
+            String content = rs.getString("announcement");
+            String date = rs.getString("date");
+            String time = rs.getString("a_time");
+
+         
+            String labelText = String.format("<html>" + "ID %s: %s" + "<br>" + "%s" +  "<br>" +     
+                "Date: %s  /  %s" + 
+                "</html>",
+                    announceID, teacherName, content, date, time);
+            
+            
+            javax.swing.JCheckBox cb = new javax.swing.JCheckBox(labelText);
+            cb.setName(announceID);
+            
+           Font customFont = new Font("Bodoni MT", Font.PLAIN, 18);
+            cb.setFont(customFont);
+cb.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+
+            announcementPanel.add(cb);
+        }
+    } catch (Exception e) {
+        System.out.println("ERROR: " + e);
+    }
+
+    announcementPanel.revalidate();
+    announcementPanel.repaint();
+}
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,14 +87,15 @@ public class modiAnnounce extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         home = new javax.swing.JButton();
         profile = new javax.swing.JButton();
-        logout = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
-        teacherid = new javax.swing.JTextField();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        announcement = new javax.swing.JTextArea();
+        a_id = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        reject = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        announcementPanel = new javax.swing.JPanel();
+        back = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,7 +159,7 @@ public class modiAnnounce extends javax.swing.JFrame {
                 .addComponent(about, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profile, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,21 +180,10 @@ public class modiAnnounce extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel9))))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 130));
-
-        logout.setBackground(new java.awt.Color(255, 0, 51));
-        logout.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        logout.setForeground(new java.awt.Color(255, 255, 255));
-        logout.setText("LOGOUT");
-        logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logoutActionPerformed(evt);
-            }
-        });
-        getContentPane().add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 500, 129, 59));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,70 +192,144 @@ public class modiAnnounce extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("T. ID:");
+        jLabel6.setText("A. ID:");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 200, 60, 40));
 
         fullname.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         getContentPane().add(fullname, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 150, 170, 40));
 
-        teacherid.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        teacherid.addActionListener(new java.awt.event.ActionListener() {
+        a_id.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        a_id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teacheridActionPerformed(evt);
+                a_idActionPerformed(evt);
             }
         });
-        getContentPane().add(teacherid, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
-
-        announcement.setColumns(20);
-        announcement.setRows(5);
-        announcement.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.black, java.awt.Color.black), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3)));
-        jScrollPane2.setViewportView(announcement);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, 510, 270));
+        getContentPane().add(a_id, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 200, 170, 40));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Britannic Bold", 3, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("MODIFY ANNOUNCEMENTS");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 440, -1));
 
+        reject.setBackground(new java.awt.Color(255, 51, 51));
+        reject.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        reject.setForeground(new java.awt.Color(255, 255, 255));
+        reject.setText("REJECT");
+        reject.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rejectActionPerformed(evt);
+            }
+        });
+        getContentPane().add(reject, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 430, 120, 50));
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder(java.awt.Color.lightGray, java.awt.Color.gray));
+
+        announcementPanel.setBackground(new java.awt.Color(255, 255, 255));
+        announcementPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.gray, java.awt.Color.lightGray, java.awt.Color.gray, java.awt.Color.lightGray), javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 4)));
+        announcementPanel.setForeground(new java.awt.Color(0, 51, 51));
+        announcementPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        javax.swing.GroupLayout announcementPanelLayout = new javax.swing.GroupLayout(announcementPanel);
+        announcementPanel.setLayout(announcementPanelLayout);
+        announcementPanelLayout.setHorizontalGroup(
+            announcementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 514, Short.MAX_VALUE)
+        );
+        announcementPanelLayout.setVerticalGroup(
+            announcementPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 314, Short.MAX_VALUE)
+        );
+
+        jScrollPane1.setViewportView(announcementPanel);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 242, 530, 330));
+
+        back.setBackground(new java.awt.Color(204, 255, 255));
+        back.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        back.setForeground(new java.awt.Color(255, 0, 0));
+        back.setText("BACK");
+        back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backActionPerformed(evt);
+            }
+        });
+        getContentPane().add(back, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, 90, 40));
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo/ahome - Copy.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 910, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
-               login l=new login();
-        l.setVisible(true);
-        dispose();
-    }//GEN-LAST:event_logoutActionPerformed
-
     private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
         // TODO add your handling code here:
-        Tprofile p=new Tprofile(ID);
+        Aprofile p=new Aprofile(ID);
         p.setVisible(true);
         dispose();
     }//GEN-LAST:event_profileActionPerformed
 
     private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
         // TODO add your handling code here:
-                AdminHome a=new AdminHome();
+                AdminHome a=new AdminHome(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_homeActionPerformed
 
     private void aboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutActionPerformed
         // TODO add your handling code here:
-        AAbout a=new AAbout();
+        AAbout a=new AAbout(ID);
         a.setVisible(true);
         dispose();
     }//GEN-LAST:event_aboutActionPerformed
 
-    private void teacheridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacheridActionPerformed
+    private void a_idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_a_idActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_teacheridActionPerformed
+    }//GEN-LAST:event_a_idActionPerformed
+
+    private void rejectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rejectActionPerformed
+        // TODO add your handling code here:
+        
+        
+        CMS db = new CMS();
+      int deleteCount = 0;
+
+// Iterate through the panel's components (the JCheckBoxes you added earlier)
+for (Component comp : announcementPanel.getComponents()) {
+    if (comp instanceof javax.swing.JCheckBox) {
+        javax.swing.JCheckBox cb = (javax.swing.JCheckBox) comp;
+        
+        if (cb.isSelected()) {
+            String announceID = cb.getName();
+           
+            if (db.deleteAnnouncement(announceID) == 1) {
+                deleteCount++;
+            }
+        }
+    }
+}
+
+if (deleteCount > 0) {
+    JOptionPane.showMessageDialog(this, deleteCount + " Announcement(s) deleted successfully", "Success", 1);
+    new modiAnnounce(FullName, ID).setVisible(true);
+    this.dispose();
+} else {
+    JOptionPane.showMessageDialog(this, "No Announcement selected for deletion", "Alert", 1);
+}
+
+        
+        
+        
+    }//GEN-LAST:event_rejectActionPerformed
+
+    private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
+        // TODO add your handling code here:
+        AdminHome h=new AdminHome(ID);
+        h.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_backActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -247,8 +357,10 @@ public class modiAnnounce extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField a_id;
     private javax.swing.JButton about;
-    private javax.swing.JTextArea announcement;
+    private javax.swing.JPanel announcementPanel;
+    private javax.swing.JButton back;
     private javax.swing.JTextField fullname;
     private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
@@ -259,9 +371,8 @@ public class modiAnnounce extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton logout;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton profile;
-    private javax.swing.JTextField teacherid;
+    private javax.swing.JButton reject;
     // End of variables declaration//GEN-END:variables
 }

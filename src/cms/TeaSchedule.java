@@ -4,6 +4,9 @@
  */
 package cms;
 
+import java.sql.*;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Dell
@@ -20,7 +23,21 @@ public class TeaSchedule extends javax.swing.JFrame {
         this.ID=ID;
         fullname.setText(name);
         teacherid.setText(ID);
+        CMS db = new CMS();
+        ResultSet rs;
+        rs = db.schedule(ID);
+        DefaultTableModel tb = (DefaultTableModel) schedule.getModel();
+        try {
+            while (rs.next()) {
+                Object schedule[] = {rs.getString("sub_day"), rs.getString("sub_name"), fullname.getText(), rs.getString("sub_class").toUpperCase(), rs.getString("sub_time")};
+                tb.addRow(schedule);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,7 +58,7 @@ public class TeaSchedule extends javax.swing.JFrame {
         back = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        attendance = new javax.swing.JTable();
+        schedule = new javax.swing.JTable();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         fullname = new javax.swing.JTextField();
@@ -151,41 +168,29 @@ public class TeaSchedule extends javax.swing.JFrame {
         jLabel2.setText("WEEKLY SCHEDULE");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
 
-        attendance.setModel(new javax.swing.table.DefaultTableModel(
+        schedule.setFont(new java.awt.Font("Segoe UI", 3, 12)); // NOI18N
+        schedule.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null}
             },
             new String [] {
-                "Day", "Subject", "Class No", "Time"
+                "Day", "Subject", "Instructor", "Class No", "Time"
             }
-        ));
-        jScrollPane1.setViewportView(attendance);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(schedule);
+        if (schedule.getColumnModel().getColumnCount() > 0) {
+            schedule.getColumnModel().getColumn(0).setPreferredWidth(40);
+            schedule.getColumnModel().getColumn(2).setPreferredWidth(80);
+            schedule.getColumnModel().getColumn(3).setPreferredWidth(30);
+        }
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 550, 280));
 
@@ -277,7 +282,6 @@ Tprofile p=new Tprofile(ID);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton about;
-    private javax.swing.JTable attendance;
     private javax.swing.JButton back;
     private javax.swing.JTextField fullname;
     private javax.swing.JLabel jLabel1;
@@ -290,6 +294,7 @@ Tprofile p=new Tprofile(ID);
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton profile;
+    private javax.swing.JTable schedule;
     private javax.swing.JTextField teacherid;
     private javax.swing.JButton thome;
     // End of variables declaration//GEN-END:variables
